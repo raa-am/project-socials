@@ -1,11 +1,12 @@
 <template>
-  <add-service />
-   <v-row no-gutters>
-<v-col cols="12" sm="4" v-for="item in items" :key="item">
 
-  <v-card
-    class="mx-auto"
-    max-width="344"
+    <v-row class="d-flex justify-center mb-4">
+  
+
+  <v-card 
+    min-width="300"
+    v-for="item in items" :key="item"
+        class="ma-4 pa-4"
   >
     <v-img
       :src="item.image"
@@ -23,8 +24,7 @@
 
     <v-card-actions>
       <v-btn
-        color="orange-lighten-2"
-        variant="text"
+        color="#F44764"
         to="/services/tiktok"
       >
         Explore
@@ -48,8 +48,9 @@
       </div>
     </v-expand-transition>
   </v-card>
-  </v-col>
- </v-row>
+  </v-row>
+
+
 </template>
 
 <script>
