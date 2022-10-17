@@ -1,9 +1,11 @@
 <template>
+  <v-footer>
+
     <v-card
       elevation="0"
       rounded="0"
       width="100%"
-      class="bg-white text-center"
+      class="text-center"
     >
       <v-card-text>
         <v-btn
@@ -29,4 +31,6 @@
         {{ new Date().getFullYear() }} — <strong>Social Manager</strong>
       </v-card-text>
     </v-card>
+  </v-footer>
+
 </template>

@@ -1,25 +1,24 @@
 <template>
+
   <v-app>
     <v-app-bar v-if="hide==false">
       <TopNav />
     </v-app-bar>
 
     <!-- Sizes your content based upon application components -->
-    <v-main>
+    <v-main style="min-height:100vh">
       <!-- Provides the application the proper gutter -->
-      <v-container fluid>
+      <v-container fluid >
         <!-- If using vue-router -->
         <router-view></router-view>
       </v-container>
     </v-main>
 
-    <v-footer app bottom absolute>
 <FooterNav />    
-</v-footer >
   </v-app>
 </template>
-
 <script>
+
 import TopNav from "./components/TopNav.vue";
 import FooterNav from "./components/FooterNav.vue"
 import { watch } from 'vue';

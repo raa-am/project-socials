@@ -1,7 +1,5 @@
 <template>
-  <add-service />
-   <v-row no-gutters>
-<v-col cols="12" sm="4" v-for="item in items" :key="item">
+<v-col cols="6" sm="8" v-for="item in items" :key="item">
 
   <v-card
     class="mx-auto"
@@ -49,7 +47,6 @@
     </v-expand-transition>
   </v-card>
   </v-col>
- </v-row>
 </template>
 
 <script>

@@ -10,7 +10,7 @@
     :url="data"
     :cancel-url="cancelURL"
   />
-  <v-card class="d-flex justify-center" min-height="80vh">
+  <v-card class="d-flex justify-center align-center" min-height="80vh">
 
     <v-col sm="4" xs="8" offset-sm="12">
       <v-card>

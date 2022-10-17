@@ -6,9 +6,9 @@
           src="https://upload.wikimedia.org/wikipedia/fr/thumb/7/7f/TikTok_Logo.svg/2560px-TikTok_Logo.svg.png"
         >
         </v-img> -->
-  <v-layout style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px">
-    <v-row no-gutters>
-      <v-card elevation="0" class="mx-auto" min-height="100vh" max-width="75vh">
+  <v-row>
+  <v-layout class="d-flex flex-wrap justify-center" >
+      <v-card elevation="0" max-width="65vh">
         <v-carousel hide-delimiters>
           <v-carousel-item
             v-for="(item, index) in images"
@@ -22,7 +22,7 @@
               >Tiktok Services</v-card-title
             > -->
         <br />
-        <v-card elevation="0">
+
           <v-tabs v-model="tab" background-color="primary">
             <v-tab value="one"> Description :</v-tab>
             <v-tab value="two">Deadlines</v-tab>
@@ -30,7 +30,7 @@
           </v-tabs>
 
           <v-card-text>
-            <v-window v-model="tab">
+            <v-window  v-model="tab">
               <v-window-item value="one">
                 <p class="text--primary">
                   The quality of subscribers / likes depends on the selected
@@ -90,22 +90,16 @@
             </v-window>
           </v-card-text>
         </v-card>
+      </v-layout>
 
-        <br />
-        <v-card-subtitle>
-          <br />
-        </v-card-subtitle>
 
-        <v-card-text class="pt-0"> </v-card-text>
-      </v-card>
-      <v-col>
-        <br />
-        <v-sheet class="d-flex justify-center">
-          <v-card elevation="0" style="width: 30vh" outlined>
-            <v-card-title>Choose your plan</v-card-title>
+<v-layout class="d-flex flex-wrap justify-center align-center" >
+          <v-card elevation="0" outlined>
+            <v-card-title class="d-flex justify-center" >Choose your plan !</v-card-title>
+            <br>
             <!-- <v-card-subtitle class="pt-4"> </v-card-subtitle> -->
 
-            <v-card-text id="checkout" >
+            <v-card-text>
 
               <v-select
                 :on-change="Selected()"
@@ -115,13 +109,13 @@
                 :item-value="'prices'"
               >
               </v-select>
-              <br />
               <p>Choose your quantity:</p>
+              <br />
+
               <v-slider
                 step="25"
                 :max="5000"
                 :min="200"
-                :ticks="tickLabels"
                 v-model="slider"
                 tick-size="10"
               ></v-slider>
@@ -148,7 +142,6 @@
               </div>
              
               <div>{{cart[0].totalPrice}}$/{{cart[0].quantity}} units</div>
-            {{test}}
             </v-card-text>
 
             <v-card-actions class="pricing-item-cta d-flex justify-center">
@@ -158,11 +151,9 @@
          
             </v-card-actions>
           </v-card>
-        </v-sheet>
-      </v-col>
+        </v-layout>
+      </v-row>
 
-    </v-row>
-  </v-layout>
 </template>
 
 <script>
