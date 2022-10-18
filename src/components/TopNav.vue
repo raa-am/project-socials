@@ -7,8 +7,7 @@
         <v-btn variant="text" to="/about">About</v-btn>
 
 
-        <v-btn variant="text" icon="mdi-filter"></v-btn>
-
+        <v-btn variant="text" icon="mdi-home"></v-btn>
         <v-btn variant="text" icon="mdi-dots-vertical"></v-btn>
  
 

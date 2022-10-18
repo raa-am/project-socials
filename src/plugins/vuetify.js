@@ -1,6 +1,8 @@
 // Styles
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
+
 
 // Vuetify
 import { createVuetify } from 'vuetify'
@@ -19,6 +21,13 @@ const vuetify =  createVuetify({
     VTextField:VTextField,
   },
   // https://next.vuetifyjs.com/features/global-configuration/
+    icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: {
+      mdi,
+    }
+  },
   defaults: {
     global: {
       rounded: 'sm',

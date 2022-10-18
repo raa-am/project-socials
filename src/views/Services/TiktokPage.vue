@@ -1,15 +1,15 @@
 <template>
     <div>
-<TiktTokViews />
+<TiktokPage />
     </div>
 </template>
 
 
 <script>
-import TiktTokViews from '../../components/Tiktok/ServicePage.vue'
+import TiktokPage from '../../components/Services/Tiktok/TiktokPage.vue'
 export default {
     components:{
-        TiktTokViews,
+        TiktokPage,
     }
 }
 </script>

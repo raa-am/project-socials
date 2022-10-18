@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Tiktok from '../views/Tiktok/TikTok.vue'
-import TiktokViews from '../views/Tiktok/TiktokViews.vue'
+import ServicesList from '../views/Services/ServicesList.vue'
+import TiktokPage from '../views/Services/TiktokPage.vue'
+import InstagramPage from '../views/Services/InstagramPage.vue'
+
 import SuccessPage from '../views/Payment/SuccessPage.vue'
 import ErrorPage from '../views/Payment/ErrorPage.vue'
 import CheckoutPage from '../views/Payment/CheckoutPage.vue'
@@ -34,8 +36,8 @@ const router = createRouter({
     },
     {
       path: '/services',
-      name: 'service',
-      component: Tiktok,
+      name: 'services',
+      component: ServicesList,
     },
     {
       path: '/checkout',
@@ -45,8 +47,13 @@ const router = createRouter({
     },
     {
       path: '/services/tiktok',
-      name: 'services-tiktok',
-      component: TiktokViews
+      name: 'service-tiktok',
+      component: TiktokPage
+    },
+    {
+      path: '/services/instagram',
+      name: 'service-instagram',
+      component: InstagramPage
     }
   ]
 })
