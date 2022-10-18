@@ -1,15 +1,17 @@
 <template>
+  
+    <v-app-bar-nav-icon to="/"><v-icon icon="mdi-shark-fin-outline" size="x-large"> </v-icon>  </v-app-bar-nav-icon>
+    <v-app-bar-title class="d-flex justify-center">
 
-        <v-toolbar-title>Social Manager</v-toolbar-title>
-        
-        <v-btn variant="text" to="/">Home</v-btn>
-        <v-btn variant="text" to="/services">Services</v-btn>
-        <v-btn variant="text" to="/about">About</v-btn>
+      <v-btn variant="text"  to="/services"><v-icon icon="mdi-rocket-launch"></v-icon>  Services</v-btn>
+        <v-btn variant="text" disabled ><v-icon icon="mdi-incognito"></v-icon>  Stalking</v-btn>
+        <v-btn variant="text" disabled ><v-icon icon="mdi-store"></v-icon>  Stores</v-btn>
 
+    </v-app-bar-title>
 
-        <v-btn variant="text" icon="mdi-home"></v-btn>
-        <v-btn variant="text" icon="mdi-dots-vertical"></v-btn>
- 
+  
+  
+
 
   
 </template>

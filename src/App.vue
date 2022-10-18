@@ -2,7 +2,7 @@
 
   <v-app>
     <v-app-bar v-if="hide==false">
-      <TopNav />
+      <TopNav   />
     </v-app-bar>
 
     <!-- Sizes your content based upon application components -->
@@ -10,8 +10,13 @@
       <!-- Provides the application the proper gutter -->
       <v-container fluid >
         <!-- If using vue-router -->
-        <router-view></router-view>
+        <router-view></router-view> 
+       
+
+
       </v-container>
+
+      
     </v-main>
 
 <FooterNav />    
@@ -32,6 +37,7 @@ export default {
     data: () => ({
       hide: false,
     }),
+    props:['Component'],
  mounted() {
     const route = useRoute();
     
@@ -62,3 +68,7 @@ export default {
   },
 };
 </script>
+
+<style>
+
+</style>

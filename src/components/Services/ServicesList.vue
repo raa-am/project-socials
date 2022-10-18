@@ -1,8 +1,8 @@
 <template>
 
   <v-row class="d-flex justify-center">
-
-<router-link v-for="item in items" :to="item.link">
+   
+      <router-link v-for="item in items" :to="item.link">
       <div class="parallax-card-wrapper">
     <v-card rounded class="card" >
       <v-img  class="card-bg"
@@ -13,6 +13,8 @@
     </v-card>
   </div>
 </router-link>
+    
+
  
   </v-row>
 

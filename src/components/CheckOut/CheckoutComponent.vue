@@ -7,21 +7,22 @@
     :pk="publishableKey"
     :line-items="lineItems"
     :success-url="successURL"
-    :url="data"
     :cancel-url="cancelURL"
   />
-  <v-card class="d-flex justify-center align-center" >
-<v-form ref="form">
+
+<v-row class="d-flex justify-center ">
 
 
-        <v-card-text>
+   
+    <v-card class="respCheckout">
+        <v-card-text  >
           <!-- <div>Word of the Day</div> -->
           <p class="text-h4 text--primary">Commmand:</p>
           <div class="text--primary">
             <!-- quantity:{{lineItems[0]}}<br> -->
           </div>
 
-          <v-table>
+          <v-table >
             <thead>
               <tr>
                 <th class="text-left">Product</th>
@@ -38,7 +39,13 @@
               </tr>
             </tbody>
           </v-table>
+          <v-btn variant="outlined" @click="Cancel" class="pricing-item-cta"><h6> Remove </h6></v-btn>
+
         </v-card-text>
+      </v-card>
+
+<v-card min-width="30vh" >
+
         <v-card-text>
           <!-- <div>Word of the Day</div> -->
           <p class="text-h4 text--primary">Delivery:</p>
@@ -65,15 +72,16 @@
 
           >
           </v-text-field>
-          <br />
-        </v-card-text>
-        <v-card-actions class="d-flex justify-center">
-          <v-btn @click="CheckOut" class="pricing-item-cta"> Order Now </v-btn>
-          <v-btn @click="Cancel" class="pricing-item-cta"> Cancel </v-btn>
+          <v-card-actions class="d-flex flex-wrap justify-center">
+            <v-btn variant="outlined" @click="CheckOut" class="pricing-item-cta"><h2> Pay {{Cart.totalPrice}}$ </h2></v-btn>
 
-        </v-card-actions>
-  </v-form>
+
+          </v-card-actions>
+        </v-card-text>
+   
   </v-card>
+</v-row>
+  
 </template>
 
 <script>
@@ -87,6 +95,7 @@ export default {
   },
   data() {
     return {
+      isEditing: true,
       publishableKey:
         "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
       lineItems: [{ quantity: "", price: "" }],
@@ -96,6 +105,10 @@ export default {
 
     };
   },
+
+
+  
+
   methods: {
     CheckOut() {
       // You will be redirected to Stripe's secure checkout page
@@ -104,6 +117,7 @@ export default {
     Cancel() {
       location.replace("services");
     },
+
   },
 
   computed: {
@@ -123,7 +137,8 @@ export default {
 
     this.lineItems[0].quantity = quantity;
     this.lineItems[0].price = price;
-    
+
+
 
 
     if (this.lineItems[0].price) {
@@ -131,8 +146,22 @@ export default {
     } else {
       location.replace("services");
     }
+    window.onpopstate = function() {
+      location.replace("");
 
+   };
     // window.onbeforeunload = () => "Are you sure you want to leave?";
   },
 };
 </script>
+
+
+<style lang="scss">
+
+@media screen and (width > 830px) {
+  .respCheckout {
+
+    min-width:70vh;
+  }
+  }
+</style>
