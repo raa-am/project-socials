@@ -44,7 +44,7 @@
         </v-card-text>
       </v-card>
 
-<v-card min-width="30vh" >
+<v-card class="respDelivery" >
 
         <v-card-text>
           <!-- <div>Word of the Day</div> -->
@@ -65,15 +65,13 @@
             variant="underlined"
             type="text"
             v-model="client.url"
-            
-            :session-id="'test'"
             label="Your Tiktok url*"
             readonly
 
           >
           </v-text-field>
           <v-card-actions class="d-flex flex-wrap justify-center">
-            <v-btn variant="outlined" @click="CheckOut" class="pricing-item-cta"><h2> Pay {{Cart.totalPrice}}$ </h2></v-btn>
+            <v-btn  variant="outlined" @click="CheckOut" color="success" ><h2> Pay {{Cart.totalPrice}}$ </h2></v-btn>
 
 
           </v-card-actions>
@@ -158,10 +156,17 @@ export default {
 
 <style lang="scss">
 
-@media screen and (width > 830px) {
+@media screen and (width > 940px) {
   .respCheckout {
 
     min-width:70vh;
+    
   }
+  .respDelivery {
+
+min-width:30vh;
+
+}
+  
   }
 </style>

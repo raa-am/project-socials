@@ -6,9 +6,9 @@
     </v-app-bar>
 
     <!-- Sizes your content based upon application components -->
-    <v-main style="min-height:100vh" class="d-flex justify-center align-center" >
+    <v-main style="min-height:100%" class="d-flex justify-center align-center" >
       <!-- Provides the application the proper gutter -->
-      <v-container fluid >
+      <v-container fluid>
         <!-- If using vue-router -->
         <router-view></router-view> 
        
@@ -24,8 +24,8 @@
 </template>
 <script>
 
-import TopNav from "./components/TopNav.vue";
-import FooterNav from "./components/FooterNav.vue"
+import TopNav from "./components/TopNav/TopNav.vue";
+import FooterNav from "./components/Footer/FooterNav.vue"
 import { watch } from 'vue';
 import { useRoute } from 'vue-router';
 export default {

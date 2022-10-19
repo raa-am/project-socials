@@ -92,7 +92,7 @@
 
 
 <v-layout  class="d-flex flex-wrap justify-center align-center"   >
-          <v-card elevation="0" outlined class="respPayOut"  >
+          <v-card elevation="0" outlined class="respPayOut" variant="outlined"  >
             <v-form
         ref="form"
         v-model="valid"

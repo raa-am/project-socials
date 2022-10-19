@@ -121,7 +121,7 @@
 
           <v-text-field  variant="outlined" clearable  type="text" v-model="client.email" label=" Email " :rules="emailRules" required>
           </v-text-field>
-          <v-text-field variant="outlined"  type="text" prefix="https://www." v-model="client.url" label=" Url "  hint="Enter the url of your profile or your video"
+          <v-text-field variant="outlined"  type="text"  v-model="client.url" label=" Url "  hint="Enter the url of your profile or your video"
  :rules="urlRules" required>
           </v-text-field>
         </v-card-text>
