@@ -1,53 +1,33 @@
 import { createStore } from "vuex";
 import createPersistedState from "vuex-persistedstate";
+import {db} from './../firebase/firebaseinit'
+import { getFirestore, collection, query, where, getDocs, orderBy, doc, setDoc, getDoc, onSnapshot, deleteDoc } from "firebase/firestore";
+import orders from './orders'
+import router from './../router'
+import { useRoute } from 'vue-router'
+
+const currentRoute = useRoute()
+
+console.log(currentRoute)
+
+
 // Create a new store instance.
 const store = createStore({
   plugins: [createPersistedState({
-    storage: window.sessionStorage,
-})],
+    })],
   state: {
-  cart : {price:'', quantity:'', totalPrice: '', name:''},
-  client : {email : '', url:''}
+    appName: 'Social Mana',
   },
-
 mutations: {
-  ADD_CHECKOUT: (state, cart  ) => {
-    state.cart.quantity = cart.quantity
-    state.cart.price = cart.price
-    state.cart.totalPrice = cart.totalPrice
-    state.cart.name = cart.name
-
-
-
-  },
-  ADD_CLIENT: (state, client ) => {
-  
-    state.client.email = client.email
-    state.client.url = client.url
-
-  }
 },
-
 actions: {
-
-AddtoCheckout( { commit }, cart ){
-  commit( 'ADD_CHECKOUT', cart[0] );
-},
-AddtoClient( { commit }, client ){
-  commit( 'ADD_CLIENT',  client );
-}
 },
 getters:{
-  checkOut(cart){
-    return cart;
-  },
+},
+modules: {
+  orders,
 
-  Client(client){
-    return client;
-  },
-
-
-}
+},
 
 })
 

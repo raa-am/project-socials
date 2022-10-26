@@ -6,13 +6,18 @@
     </v-app-bar>
 
     <!-- Sizes your content based upon application components -->
-    <v-main style="min-height:100%" class="d-flex justify-center align-center" >
+    <v-main  style="min-height:100%" class="d-flex justify-center align-center" >
       <!-- Provides the application the proper gutter -->
       <v-container fluid>
         <!-- If using vue-router -->
-        <router-view></router-view> 
-       
 
+        <router-view  v-slot="{ Component }">
+            <transition v-cloak name="fade">
+              <component :is="Component" />
+
+          </transition >
+        </router-view> 
+       
 
       </v-container>
 
@@ -49,7 +54,7 @@ export default {
     // You can watch the property for triggering some other action on change
     watch(() => route.name, () => {
       console.debug(`MyCoolComponent - watch route.name changed to ${route.name}`);
-    if(route.name == "checkout"){
+    if(route.name == "checkout" ){
         this.hide = true
         console.log(this.hide)
      
@@ -69,6 +74,15 @@ export default {
 };
 </script>
 
-<style>
+<style lang="css">
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  display: none;
+}
+[v-cloak] { display: none; }
 
 </style>

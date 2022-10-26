@@ -1,22 +1,24 @@
 <template>
-
-  <v-row class="d-flex justify-center">
+      <v-row class="d-flex justify-center">
    
-      <router-link v-for="item in items" :to="item.link">
-      <div class="parallax-card-wrapper">
-    <v-card rounded class="card" >
-      <v-img  class="card-bg"
-      :src="item.image"
-      height="220px"
-      cover
-    ></v-img>
-    </v-card>
-  </div>
+   <router-link v-for="item in items" :to="item.link">
+   <div class="parallax-card-wrapper">
+ <v-card rounded class="card" >
+   <v-img  class="card-bg"
+   :src="item.image"
+   height="220px"
+   cover
+ ></v-img>
+ </v-card>
+</div>
 </router-link>
-    
-
  
-  </v-row>
+
+
+</v-row>
+
+
+
 
 
 </template>

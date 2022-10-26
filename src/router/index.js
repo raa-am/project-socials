@@ -5,7 +5,8 @@ import TiktokPage from '../views/Services/TiktokPage.vue'
 import InstagramPage from '../views/Services/InstagramPage.vue'
 
 import SuccessPage from '../views/Payment/SuccessPage.vue'
-import ErrorPage from '../views/Payment/ErrorPage.vue'
+import PayoutPage from '../views/Payment/PayoutPage.vue'
+
 import CheckoutPage from '../views/Payment/CheckoutPage.vue'
 
 const router = createRouter({
@@ -17,14 +18,16 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: "/success",
+      path: "/order/:id",
       name: "Success",
       component: SuccessPage,
+
     },
     {
-      path: "/error",
-      name: "Error",
-      component: ErrorPage,
+      path: "/payout",
+      name: "Payout",
+      component: PayoutPage,
+
     },
     {
       path: '/about',
@@ -61,6 +64,7 @@ const router = createRouter({
     {
       path: '/services',
       name: 'services',
+      meta: { transition: 'slide-left' },
       component: ServicesList,
     },
     {
