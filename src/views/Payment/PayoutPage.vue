@@ -8,6 +8,7 @@
        variant="outlined"
      >
   <h1>SUCCESS ! </h1>
+
      </v-alert>
  
      <br>
@@ -18,7 +19,6 @@
  
  <script>
  import store from "../../store";
-import { useRoute } from 'vue-router'
  
  export default {
  
@@ -30,16 +30,22 @@ import { useRoute } from 'vue-router'
     },
  
     mounted(){
-    const route = useRoute()
 
-       this.AddOrder();
 
-       const id = store.getters.Order
-      route.params.id = id
+const email = store.getters.User.email
 
-       console.log(id)
+if(email){
+   this.AddOrder(); 
+}
 
-       this.$router.push({ path: 'order/' + route.params.id})
+
+
+         const data = store.getters.Order
+         console.log(data)
+
+
+
+      this.$router.push({ path: '/order/' + data})
 
 
     },

@@ -8,7 +8,10 @@
       variant="outlined"
     >
  <h1>SUCCESS ! </h1>
-      {{Order}}
+ {{OrderId}}
+ {{Order}}
+
+
     </v-alert>
 
     <br>
@@ -18,6 +21,7 @@
 </template>
 
 <script>
+import { useRoute } from 'vue-router';
 import store from '../../store';
 
 
@@ -29,20 +33,18 @@ export default {
    },
    methods:{
       getOrder(){
-             store.dispatch("getOrder");
+             store.dispatch("getOrder", this.$route.params.id);
        }
     },
     computed:{
-      Order(){
+      OrderId(){
            return store.getters.Order
-       }
+       },
     },
    mounted(){
-      localStorage.removeItem('vuex');
-      localStorage.clear();
-      const uid = store.getters.Order
 
-      console.log(uid)
+
+     this.getOrder()
 
 
    }

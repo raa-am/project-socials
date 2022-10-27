@@ -24,12 +24,15 @@
           variant="plain"
           to="/faq"
         ></v-btn>
-        <v-btn
+        <router-link to="/contact">
+          <v-btn
           class="mx-4"
           icon="mdi-email"
           variant="plain"
           to="/contact"
         ></v-btn>
+        </router-link>
+  
         <v-btn
           class="mx-4"
           icon="mdi-information-outline"

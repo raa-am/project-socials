@@ -33,6 +33,8 @@ import TopNav from "./components/TopNav/TopNav.vue";
 import FooterNav from "./components/Footer/FooterNav.vue"
 import { watch } from 'vue';
 import { useRoute } from 'vue-router';
+
+import store from "./store";
 export default {
   components: {
     TopNav,
@@ -44,7 +46,13 @@ export default {
     }),
     props:['Component'],
  mounted() {
-    const route = useRoute();
+  const route = useRoute();
+
+
+  const id = store.state.orderId
+  route.params.id = id
+
+
     
     console.debug(`current route name on component setup init: ${route.name}`);
 
@@ -70,7 +78,16 @@ export default {
     });
     
     return { route };
+
+
+ 
+
   },
+
+
+
+
+  
 };
 </script>
 

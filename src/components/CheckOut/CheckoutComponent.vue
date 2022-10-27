@@ -83,9 +83,13 @@
   
 </template>
 
-<script>
 
+<script>
+    const GenUid = uuidv4()
+
+import { uuidv4 } from "@firebase/util";
 import { StripeCheckout } from "@vue-stripe/vue-stripe";
+import router from "../../router";
 import store from "../../store";
 
 export default {
@@ -101,9 +105,9 @@ export default {
         "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
       lineItems: [{ quantity: "", price: "" }],
       client: { email: store.getters.User.email, url: store.getters.User.url},
-      successURL: "http://localhost:5173/payout",
+      successURL: "http://localhost:5173/payout/" + GenUid,
       cancelURL: "http://localhost:5173/services",
-
+      uid : ""
     };
   },
 
@@ -133,7 +137,6 @@ export default {
 
     this.lineItems[0].quantity = quantity;
     this.lineItems[0].price = price;
-
 
 
 

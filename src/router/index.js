@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ServicesList from '../views/Services/ServicesList.vue'
 import TiktokPage from '../views/Services/TiktokPage.vue'
 import InstagramPage from '../views/Services/InstagramPage.vue'
-
+import ErrorPage from '../views/Payment/ErrorPage.vue'
 import SuccessPage from '../views/Payment/SuccessPage.vue'
 import PayoutPage from '../views/Payment/PayoutPage.vue'
 
@@ -24,11 +24,13 @@ const router = createRouter({
 
     },
     {
-      path: "/payout",
+      path: "/payout/:id",
       name: "Payout",
       component: PayoutPage,
 
     },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: ErrorPage },
+
     {
       path: '/about',
       name: 'about',
