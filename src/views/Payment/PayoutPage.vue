@@ -41,8 +41,11 @@ if(email){
 
 
          const data = store.getters.Order
+         
          console.log(data)
 
+   
+    window.localStorage.removeItem('vuex')
 
 
       this.$router.push({ path: '/order/' + data})

@@ -12,10 +12,15 @@ const state = {
     cart : {price:'', quantity:'', totalPrice: '', name:''},
     client : {email : '', url:''},
     orderId:  uuidv4(),
+    orderData:{email:''}
     
 }
 
 const getters = {
+
+  Orders(state){
+    return state.orderData
+  },
 
       Order(state){
         return state.orderId
@@ -43,7 +48,7 @@ const actions = {
     
   
   
-      AddService({commit, getters}){
+      AddService({commit, getters}, orderId){
       
 /*      /!\  Temporary workaround /!\ 
       todo: replace uuid with the real 
@@ -74,17 +79,25 @@ const actions = {
 
       },
 
-
+    
       
-    async getOrder(){
+    async getOrder({commit}, orderData){
 
      
       const docRef = doc(db, "Orders",state.orderId);
       console.log(state.orderId)
       const docSnap = await getDoc(docRef);
-      
+
+      orderData = {email: docSnap.data().email}
+
+      console.log(orderData)
+    
+
+      commit( 'ADD_ORDERS',  orderData);
+
+
       if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
+        console.log("Document data:", docSnap.data().email);
       } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
@@ -114,6 +127,12 @@ const mutations = {
           state.orderId = orderId
   
         },
+
+        ADD_ORDERS: (state, orderData) => {
+
+          state.orderData.email = orderData.email
+
+        }
 
       
 }

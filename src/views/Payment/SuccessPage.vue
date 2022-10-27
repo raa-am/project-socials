@@ -9,9 +9,7 @@
     >
  <h1>SUCCESS ! </h1>
  {{OrderId}}
- {{Order}}
-
-
+{{OrderData}}
     </v-alert>
 
     <br>
@@ -40,11 +38,16 @@ export default {
       OrderId(){
            return store.getters.Order
        },
+       OrderData(){
+           return store.getters.Orders
+       },
     },
    mounted(){
 
+      this.getOrder()
 
-     this.getOrder()
+
+    window.localStorage.removeItem('vuex')
 
 
    }
