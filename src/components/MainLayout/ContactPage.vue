@@ -1,12 +1,14 @@
-<template>
-        <v-row class="d-flex flex-wrap justify-center align-center ">
+<template >
+
+
+
+   
+      <v-row   >
 
     <v-card
-    
+  
     class="d-flex flex-wrap justify-center mx-auto"
-      title="Contact us"
-      max-width="70vh"
-      variant="outlined "
+      
     >
       <v-col >
         <v-text-field
@@ -55,9 +57,11 @@
     </v-card>
 
     </v-row>
+
   </template>
   <script>
     export default {
+
       data: () => ({
         first: null,
         last: null,
@@ -67,3 +71,17 @@
       }),
     }
   </script>
+
+<style lang="css">
+
+.fade-enter-active, .fade-leave-active {
+  display: none;
+  transition: opacity .5s;
+
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+
+}
+
+</style>

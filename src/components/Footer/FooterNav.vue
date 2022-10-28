@@ -10,34 +10,28 @@
     
     >
       <v-card-text>
-        <v-btn
-          class="mx-4"
-          icon="mdi-home"
-          variant="plain"
-          to="/"
-        ></v-btn>
 
 
-        <v-btn
+          <v-btn
           class="mx-4"
           icon="mdi-frequently-asked-questions"
           variant="plain"
-          to="/faq"
+          @click="GoToFaq()"
         ></v-btn>
-        <router-link to="/contact">
+
           <v-btn
           class="mx-4"
           icon="mdi-email"
           variant="plain"
-          to="/contact"
+          @click="GoToContact()"
         ></v-btn>
-        </router-link>
+     
   
         <v-btn
           class="mx-4"
           icon="mdi-information-outline"
           variant="plain"
-          to="/cgu"
+          @click="GoToCgu()"
         ></v-btn>
 
       </v-card-text>
@@ -51,3 +45,24 @@
   </v-footer>
 
 </template>
+
+<script>
+export default {
+
+methods: {
+  GoToCgu(){
+    this.$router.push({ path: '/cgu' })
+
+  },
+  GoToFaq(){
+    this.$router.push({ path: '/faq' })
+
+  },
+  GoToContact(){
+    this.$router.push({ path: '/contact' })
+
+  }
+}
+
+}
+</script>

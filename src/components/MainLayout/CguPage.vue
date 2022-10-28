@@ -1,7 +1,8 @@
-<template>
+<template v-slot="{ Component }">
+<transition name="fade">
 
-    <v-row class="d-flex justify-center flex-wrap">
-        <v-card width="90vh">
+    <v-row  :is="Component" >
+        <v-card  class="d-flex flex-wrap justify-center mx-auto">
             <v-card-text>
                 <p class="text-left">
 
@@ -101,4 +102,29 @@ SocialHub is not liable for any damage/loss of videos, social media accounts, an
         </v-card>
 
     </v-row>
+
+</transition>
 </template>
+
+<script>
+export default {
+    props:['Component'],
+
+}
+
+
+</script>
+
+<style lang="css">
+
+.fade-enter-active, .fade-leave-active {
+  display: none;
+  transition: opacity .5s;
+
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+
+}
+
+</style>

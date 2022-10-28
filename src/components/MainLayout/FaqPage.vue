@@ -1,7 +1,8 @@
 <template>
-    <v-layout class="d-flex flex-wrap justify-center align-center ">
-    <v-card max-width="80vh">
-      <v-sheet class="d-flex flex-wrap justify-center align-center " height="50"><h1>FAQ:</h1> </v-sheet>
+
+    <v-row >
+    <v-card >
+      <v-sheet class="d-flex flex-wrap justify-center " ><h1>FAQ:</h1> </v-sheet>
       <v-expansion-panels variant="popout" class="my-4" >
 
         <v-expansion-panel
@@ -12,5 +13,26 @@
         ></v-expansion-panel>
       </v-expansion-panels>
     </v-card>
-</v-layout>
+</v-row>
   </template>
+
+  
+<script>
+export default {
+  props:['Component'],
+
+}
+</script>
+<style lang="css">
+
+.fade-enter-active, .fade-leave-active {
+  display: none;
+
+  transition: opacity .5s;
+
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+</style>

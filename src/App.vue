@@ -6,16 +6,13 @@
     </v-app-bar>
 
     <!-- Sizes your content based upon application components -->
-    <v-main  style="min-height:100%" class="d-flex justify-center align-center" >
+    <v-main style="min-height:100%" class="d-flex justify-center align-center" >
       <!-- Provides the application the proper gutter -->
-      <v-container fluid>
+      <v-container fluid >
         <!-- If using vue-router -->
 
-        <router-view  v-slot="{ Component }">
-            <transition v-cloak name="fade">
-              <component :is="Component" />
+        <router-view  v-cloak>
 
-          </transition >
         </router-view> 
        
 
@@ -23,8 +20,11 @@
 
       
     </v-main>
+    <v-footer>
 
-<FooterNav />    
+      <FooterNav />    
+
+    </v-footer>
   </v-app>
 </template>
 <script>
@@ -94,12 +94,13 @@ export default {
 <style lang="css">
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity .1s;
+
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
-  display: none;
 }
-[v-cloak] { display: none; }
+[v-cloak] > * { display:none }
+[v-cloak]::before { content: "loading…" }
 
 </style>

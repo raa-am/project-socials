@@ -13,9 +13,12 @@
 <!--  {{OrderId}}
  -->
  
- <p>Your order as beed registred , you will recieve email on : {{OrderData.email}}</p>
- <p> And your delivery will given at this url:{{OrderData.url}} </p>
- {{SwichCgu}}
+ <p>Your order as beed registred , you will recieve an email on : {{OrderData.email}}</p>
+ <p> And your order will be delivery at this url:{{OrderData.url}} </p>
+
+ <p> You can check all your orders here     <v-btn variant="icon" @click="GoToProfil" ><v-icon icon="mdi-account-details
+"></v-icon>  </v-btn> </p>
+
     </v-alert>
     <v-alert
       type="warning"
