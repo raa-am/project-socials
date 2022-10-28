@@ -123,7 +123,7 @@
           </v-text-field>
           <v-text-field variant="outlined"  type="text"  v-model="client.url" label=" Url "  hint="Enter the url of your profile or your video"
  :rules="urlRules" required>
-          </v-text-field>
+          </v-text-field> 
         </v-card-text>
 
         <v-sheet class="d-flex justify-center align-center" >

@@ -33,11 +33,14 @@ export default {
     items: [
       { title: 'Tiktok', description: 'get tiktok views', link:'/services/tiktok'  , image: 'https://icones.pro/wp-content/uploads/2021/03/logo-icone-tiktok-simbolo.png' },
       { title: 'Instagram', description: 'get tiktok likes',link:'/services/instagram'  , image: 'https://lecoindudigital.fr/wp-content/uploads/2017/06/instagram-Logo-PNG-Transparent-Background-download-1.png'},
-      { title: 'Twitter', description: 'get tiktok followers', link:'/services/test', image: 'https://i.postimg.cc/j5V2fYKb/kisspng-united-states-youtube-logo-youtube-play-button-transparent-png-5ab1be08946c16-88898959152159.png' },
+      { title: 'Twitter', description: 'get tiktok followers', link:'/services/youtube', image: 'https://i.postimg.cc/j5V2fYKb/kisspng-united-states-youtube-logo-youtube-play-button-transparent-png-5ab1be08946c16-88898959152159.png' },
     ],
  
   }),
+mounted(){
+  window.localStorage.removeItem('vuex')
 
+}
 }
 </script>
 

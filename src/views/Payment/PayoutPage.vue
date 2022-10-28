@@ -36,12 +36,14 @@ const email = store.getters.User.email
 
 if(email){
    this.AddOrder(); 
+   window.localStorage.removeItem('vuex')
+
 }
 
 
 
          const data = store.getters.Order
-         
+
          console.log(data)
 
    

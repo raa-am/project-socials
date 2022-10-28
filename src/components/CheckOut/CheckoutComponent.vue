@@ -71,7 +71,15 @@
           >
           </v-text-field>
           <v-card-actions class="d-flex flex-wrap justify-center">
-            <v-btn  variant="outlined" @click="CheckOut" color="success" ><h2> Pay {{Cart.totalPrice}}$ </h2></v-btn>
+
+            <v-switch
+              v-model="Access"
+              label="CGU"
+              color="green"
+              hide-details
+              @click="Switch" 
+            ></v-switch>
+            <v-btn :disabled="isDisabled" variant="outlined" @click="CheckOut" color="success" ><h2> Pay {{Cart.totalPrice}}$ </h2></v-btn>
 
 
 
@@ -100,7 +108,9 @@ export default {
   },
   data() {
     return {
-      isEditing: true,
+      Access: true,
+      isDisabled: false,
+      authAccess: true,
       publishableKey:
         "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
       lineItems: [{ quantity: "", price: "" }],
@@ -115,14 +125,32 @@ export default {
   
 
   methods: {
+
+    AddtoSwitch(){
+             store.dispatch("AddtoSwitch", this.isDisabled);
+       },
+
     CheckOut() {
       // You will be redirected to Stripe's secure checkout page
        this.$refs.checkoutRef.redirectToCheckout();
-
+        this.AddtoSwitch()
     },
+
+ 
+
     Cancel() {
+
       location.replace("services");
     },
+    Switch(){
+      if(this.Access == true){
+      this.isDisabled = true 
+      console.log(this.isDisabled)
+    }else {
+      this.isDisabled = false 
+      console.log(this.isDisabled)
+    }
+    }
   },
 
   computed: {
@@ -131,18 +159,22 @@ export default {
       return store.getters.Cart
     }
   },
+
   mounted() {
+
     const quantity = store.getters.Cart.quantity;
     const price = store.getters.Cart.price;
 
     this.lineItems[0].quantity = quantity;
     this.lineItems[0].price = price;
 
+ 
 
 
     if (this.lineItems[0].price) {
       console.log(this.lineItems[0].price);
     } else {
+    window.localStorage.removeItem('vuex')
       location.replace("services");
     }
     window.onpopstate = function() {

@@ -12,7 +12,8 @@ const state = {
     cart : {price:'', quantity:'', totalPrice: '', name:''},
     client : {email : '', url:''},
     orderId:  uuidv4(),
-    orderData:{email:''}
+    orderData:{email:''},
+    switchCgu: true
     
 }
 
@@ -33,22 +34,29 @@ const getters = {
       User(state){
         return state.client;
       },
+          
+      switchCgu(state){
+        return state.switchCgu;
+      },
 }
 
 const actions = {
       AddtoCheckout( { commit }, cart ){
         commit( 'ADD_CHECKOUT', cart[0] );
-
       },
-
 
       AddtoClient( { commit }, client ){
         commit( 'ADD_CLIENT',  client );
       },
     
-  
+      AddtoSwitch( { commit }, switchCgu ){
+        commit( 'ADD_SWITCH',  switchCgu );
+      },
+
   
       AddService({commit, getters}, orderId){
+
+
       
 /*      /!\  Temporary workaround /!\ 
       todo: replace uuid with the real 
@@ -87,8 +95,9 @@ const actions = {
       const docRef = doc(db, "Orders",state.orderId);
       console.log(state.orderId)
       const docSnap = await getDoc(docRef);
+      const order = docSnap.data()
 
-      orderData = {email: docSnap.data().email}
+      orderData = {email: order.email, url: order.url} 
 
       console.log(orderData)
     
@@ -97,7 +106,7 @@ const actions = {
 
 
       if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data().email);
+        console.log("Document data:", order);
       } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
@@ -131,8 +140,16 @@ const mutations = {
         ADD_ORDERS: (state, orderData) => {
 
           state.orderData.email = orderData.email
+          state.orderData.url = orderData.url
 
-        }
+
+        },
+
+        ADD_SWITCH: (state, switchCgu) => {
+
+          state.switchCgu = switchCgu
+   
+        },
 
       
 }
