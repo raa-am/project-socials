@@ -1,22 +1,24 @@
 <template>
-
-  <v-row class="d-flex justify-center">
+      <v-row class="d-flex justify-center">
    
-      <router-link v-for="item in items" :to="item.link">
-      <div class="parallax-card-wrapper">
-    <v-card rounded class="card" >
-      <v-img  class="card-bg"
-      :src="item.image"
-      height="220px"
-      cover
-    ></v-img>
-    </v-card>
-  </div>
+   <router-link v-for="item in items" :to="item.link">
+   <div class="parallax-card-wrapper">
+ <v-card rounded class="card" >
+   <v-img  class="card-bg"
+   :src="item.image"
+   height="220px"
+   cover
+ ></v-img>
+ </v-card>
+</div>
 </router-link>
-    
-
  
-  </v-row>
+
+
+</v-row>
+
+
+
 
 
 </template>
@@ -31,11 +33,14 @@ export default {
     items: [
       { title: 'Tiktok', description: 'get tiktok views', link:'/services/tiktok'  , image: 'https://icones.pro/wp-content/uploads/2021/03/logo-icone-tiktok-simbolo.png' },
       { title: 'Instagram', description: 'get tiktok likes',link:'/services/instagram'  , image: 'https://lecoindudigital.fr/wp-content/uploads/2017/06/instagram-Logo-PNG-Transparent-Background-download-1.png'},
-      { title: 'Twitter', description: 'get tiktok followers', link:'/services/test', image: 'https://i.postimg.cc/j5V2fYKb/kisspng-united-states-youtube-logo-youtube-play-button-transparent-png-5ab1be08946c16-88898959152159.png' },
+      { title: 'Twitter', description: 'get tiktok followers', link:'/services/youtube', image: 'https://i.postimg.cc/j5V2fYKb/kisspng-united-states-youtube-logo-youtube-play-button-transparent-png-5ab1be08946c16-88898959152159.png' },
     ],
  
   }),
+mounted(){
+  window.localStorage.removeItem('vuex')
 
+}
 }
 </script>
 

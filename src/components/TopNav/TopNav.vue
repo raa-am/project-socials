@@ -8,6 +8,8 @@
         <v-btn variant="text" disabled ><v-icon size="x-large" icon="mdi-store"></v-icon>  </v-btn>
 
     </v-app-bar-title>
+    <v-btn variant="icon" @click="GoToProfil" ><v-icon size="x-large" icon="mdi-account-details
+"></v-icon>  </v-btn>
 
   
   
@@ -27,6 +29,9 @@
 
       this.$router.push({ path: '/services' })
 
+    },
+    GoToProfil(){
+      location.replace('https://billing.stripe.com/p/login/test_5kA3fh8kb4hk9VK3cc')
     }
   },
     watch: {

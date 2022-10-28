@@ -71,7 +71,16 @@
           >
           </v-text-field>
           <v-card-actions class="d-flex flex-wrap justify-center">
-            <v-btn  variant="outlined" @click="CheckOut" color="success" ><h2> Pay {{Cart.totalPrice}}$ </h2></v-btn>
+
+            <v-switch
+              v-model="Access"
+              label="CGU"
+              color="green"
+              hide-details
+              @click="Switch" 
+            ></v-switch>
+            <v-btn :disabled="isDisabled" variant="outlined" @click="CheckOut" color="success" ><h2> Pay {{Cart.totalPrice}}$ </h2></v-btn>
+
 
 
           </v-card-actions>
@@ -82,25 +91,33 @@
   
 </template>
 
+
 <script>
+    const GenUid = uuidv4()
+
+import { uuidv4 } from "@firebase/util";
 import { StripeCheckout } from "@vue-stripe/vue-stripe";
+import router from "../../router";
 import store from "../../store";
 
 export default {
   name: "CheckoutComponent",
   components: {
     "stripe-checkout": StripeCheckout,
+
   },
   data() {
     return {
-      isEditing: true,
+      Access: true,
+      isDisabled: false,
+      authAccess: true,
       publishableKey:
         "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
       lineItems: [{ quantity: "", price: "" }],
-      client: { email: store.getters.Client.client.email, url: store.getters.Client.client.url},
-      successURL: "http://localhost:5173/success",
-      cancelURL: "http://localhost:5173/error",
-
+      client: { email: store.getters.User.email, url: store.getters.User.url},
+      successURL: "http://localhost:5173/payout/" + GenUid,
+      cancelURL: "http://localhost:5173/services",
+      uid : ""
     };
   },
 
@@ -108,47 +125,62 @@ export default {
   
 
   methods: {
+
+    AddtoSwitch(){
+             store.dispatch("AddtoSwitch", this.isDisabled);
+       },
+
     CheckOut() {
       // You will be redirected to Stripe's secure checkout page
-      this.$refs.checkoutRef.redirectToCheckout();
-    },
-    Cancel() {
-      location.replace("services");
+       this.$refs.checkoutRef.redirectToCheckout();
+        this.AddtoSwitch()
     },
 
+ 
+
+    Cancel() {
+
+      location.replace("services");
+    },
+    Switch(){
+      if(this.Access == true){
+      this.isDisabled = true 
+      console.log(this.isDisabled)
+    }else {
+      this.isDisabled = false 
+      console.log(this.isDisabled)
+    }
+    }
   },
 
   computed: {
-    Client(){
-      return store.getters.Client.client
-    },
+
     Cart(){
-      return store.getters.checkOut.cart
+      return store.getters.Cart
     }
   },
-  mounted() {
-    const quantity = store.getters.checkOut.cart.quantity;
-    const price = store.getters.checkOut.cart.price;
-    const email = store.getters.Client.client.email;
-    console.log(email)
 
+  mounted() {
+
+    const quantity = store.getters.Cart.quantity;
+    const price = store.getters.Cart.price;
 
     this.lineItems[0].quantity = quantity;
     this.lineItems[0].price = price;
 
-
+ 
 
 
     if (this.lineItems[0].price) {
       console.log(this.lineItems[0].price);
     } else {
+    window.localStorage.removeItem('vuex')
       location.replace("services");
     }
     window.onpopstate = function() {
       location.replace("");
 
    };
-    // window.onbeforeunload = () => "Are you sure you want to leave?";
   },
 };
 </script>

@@ -92,7 +92,7 @@
       </v-layout>
 
 
-<v-layout  class="d-flex flex-wrap justify-center align-center"   >
+    <v-layout  class="d-flex flex-wrap justify-center align-center"   >
           <v-card elevation="0" outlined class="respPayOut"  >
             <v-form
         ref="form"
@@ -104,7 +104,7 @@
           <v-card-title>Choose your plan:</v-card-title>
           <br>
 
-          <v-select variant="outlined"
+          <v-select variant="outlined"  transition="scroll-y-transition"
             :on-change="Selected()" :items="items" v-model="selected" label="Service:"
             :item-value="'prices'">
           </v-select>
@@ -123,7 +123,7 @@
           </v-text-field>
           <v-text-field variant="outlined"  type="text"  v-model="client.url" label=" Url "  hint="Enter the url of your profile or your video"
  :rules="urlRules" required>
-          </v-text-field>
+          </v-text-field> 
         </v-card-text>
 
         <v-sheet class="d-flex justify-center align-center" >
