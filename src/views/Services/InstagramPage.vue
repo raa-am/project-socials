@@ -6,7 +6,7 @@
 
 
 <script>
-import InstagramPage from '../../components/Services/Instagram/InstagramPage.vue'
+import InstagramPage from '../../components/Services/Instagram/InstagramService.vue'
 export default {
     components:{
         InstagramPage,

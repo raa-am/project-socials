@@ -8,7 +8,7 @@
         <v-btn variant="text" disabled ><v-icon size="x-large" icon="mdi-store"></v-icon>  </v-btn>
 
     </v-app-bar-title>
-    <v-btn variant="icon" @click="GoToProfil" ><v-icon size="x-large" icon="mdi-account-details
+    <v-btn @click="GoToProfil" ><v-icon size="x-large" icon="mdi-account-details
 "></v-icon>  </v-btn>
 
   

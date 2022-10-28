@@ -29,8 +29,8 @@
 </template>
 <script>
 
-import TopNav from "./components/TopNav/TopNav.vue";
-import FooterNav from "./components/Footer/FooterNav.vue"
+import TopNav from "./components/MainLayout/Main/TopNav.vue";
+import FooterNav from "./components/MainLayout/Main/FooterNav.vue"
 import { watch } from 'vue';
 import { useRoute } from 'vue-router';
 

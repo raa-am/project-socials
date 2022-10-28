@@ -6,7 +6,9 @@ import InstagramPage from '../views/Services/InstagramPage.vue'
 import ErrorPage from '../views/Payment/ErrorPage.vue'
 import SuccessPage from '../views/Payment/SuccessPage.vue'
 import PayoutPage from '../views/Payment/PayoutPage.vue'
+import YoutubePage from '../views/Services/YoutubePage.vue'
 
+YoutubePage
 import CheckoutPage from '../views/Payment/CheckoutPage.vue'
 
 const router = createRouter({
@@ -84,6 +86,11 @@ const router = createRouter({
       path: '/services/instagram',
       name: 'service-instagram',
       component: InstagramPage
+    },
+    {
+      path: '/services/youtube',
+      name: 'service-youtube',
+      component: YoutubePage
     }
   ]
 })

@@ -5,19 +5,19 @@
 
     <v-alert
       type="success"
-      variant="outlined"
       v-if="SwichCgu == false"
-     
+      variant="outlined"
+
     >
  <h1>SUCCESS ! </h1>
 <!--  {{OrderId}}
  -->
  
  <p>Your order as beed registred , you will recieve an email on : {{OrderData.email}}</p>
- <p> And your order will be delivery at this url:{{OrderData.url}} </p>
+ <p> Your order will be delivered at this url: {{OrderData.url}} </p>
 
- <p> You can check all your orders here     <v-btn variant="icon" @click="GoToProfil" ><v-icon icon="mdi-account-details
-"></v-icon>  </v-btn> </p>
+ <p> Follow all your orders here :   <v-icon  @click="GoToProfil()"  icon="mdi-account-details
+"></v-icon>   </p>
 
     </v-alert>
     <v-alert
@@ -26,11 +26,11 @@
       v-if="!SwichCgu == false"
      
     >
- <h1>warning ! </h1>
+ <h1>Oops ! </h1>
 <!--  {{OrderId}}
  -->
  
- <p>this is error page</p>
+ <p>Something where wrong , you will be redirected soon....</p>
 
     </v-alert>
     <br>
@@ -53,10 +53,13 @@ export default {
     }
    },
    methods:{
+      GoToProfil(){
+      location.replace('https://billing.stripe.com/p/login/test_5kA3fh8kb4hk9VK3cc')
+    },
       getOrder(){
              store.dispatch("getOrder", this.$route.params.id);
        },
-       SwichCgu(){
+       getSwitch(){
              store.dispatch("switchCgu");
        },
        resetData(){
@@ -73,10 +76,22 @@ export default {
        SwichCgu(){
            return store.getters.switchCgu
        },
+
     },
    mounted(){
 
+setTimeout(() => {
+   
+   if(!store.getters.switchCgu == false){
+   console.log('ok')
+   this.$router.push({path: "/services"})
+}
+
+}, 5000);
+
       this.getOrder()
+
+
       window.localStorage.removeItem('vuex')
 
 
