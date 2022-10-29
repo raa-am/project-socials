@@ -1,7 +1,7 @@
 <template>
   
-    <v-app-bar-nav-icon icon="mdi-shark-fin-outline"  size="x-large" to="/"> <v-icon>
-      
+    <v-app-bar-nav-icon icon="mdi-shark-fin-outline"  size="x-large"> <v-icon>
+
     </v-icon></v-app-bar-nav-icon>
     <v-app-bar-title class="d-flex justify-center">
 
