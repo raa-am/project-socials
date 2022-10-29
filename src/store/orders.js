@@ -44,7 +44,7 @@ const actions = {
       AddtoCheckout( { commit }, cart ){
         commit( 'ADD_CHECKOUT', cart[0] );
       },
-
+    
       AddtoClient( { commit }, client ){
         commit( 'ADD_CLIENT',  client );
       },

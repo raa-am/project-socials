@@ -100,7 +100,8 @@
         >
   
           <v-card-text>
-            <v-card-title>Choose your plan:</v-card-title>
+            <v-card-title>Choose your plan:             {{getService.name}}
+</v-card-title>
             <br>
   
             <v-select variant="outlined"
@@ -131,7 +132,9 @@
           </v-sheet>
         <br>
           <v-card-actions class="d-flex justify-center">
+
             <v-btn  variant="outlined"  :disabled="!valid" to="/checkout"  @click="AddtoCheckout">
+
               <h2>Order now</h2> 
             </v-btn>
           </v-card-actions>
@@ -195,9 +198,21 @@
         ],
       };
     },
-  
+    mounted() {
+        this.addService()
+      },
+    computed:{
+        getService(){
+          return store.getters.getService
+        }
+      },
     methods: {
    
+      addService(){
+      return store.dispatch('getService')
+
+      },
+
   
       AddtoCheckout(){
         this.$refs.form.validate()
@@ -248,6 +263,8 @@
   
         }
       },
+ 
+   
     },
   
   };

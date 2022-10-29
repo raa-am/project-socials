@@ -65,12 +65,7 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../components/MainLayout/CguPage.vue')
     },
-    {
-      path: '/services',
-      name: 'services',
-      meta: { transition: 'slide-left' },
-      component: ServicesList,
-    },
+
     {
       path: '/checkout',
       name: 'checkout',
@@ -78,6 +73,16 @@ const router = createRouter({
 
     },
     {
+      path: '/services',
+      name: 'services',
+      component: ServicesList,
+    },
+    {
+      path: '/services/:name',
+      name: 'service',
+      component: YoutubePage
+    }
+/*     {
       path: '/services/tiktok',
       name: 'service-tiktok',
       component: TiktokPage
@@ -86,12 +91,7 @@ const router = createRouter({
       path: '/services/instagram',
       name: 'service-instagram',
       component: InstagramPage
-    },
-    {
-      path: '/services/youtube',
-      name: 'service-youtube',
-      component: YoutubePage
-    }
+    }, */
   ]
 })
 

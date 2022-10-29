@@ -1,7 +1,7 @@
 <template>
       <v-row class="d-flex justify-center">
    
-   <router-link v-for="item in items" :to="item.link">
+<!--    <router-link v-for="item in items" :to="item.link">
    <div class="parallax-card-wrapper">
  <v-card rounded class="card" >
    <v-img  class="card-bg"
@@ -12,7 +12,36 @@
  </v-card>
 </div>
 </router-link>
+  -->   
+  
+  <v-card v-for="service in this.data" class="d-flex justify-center" >
+    <p>
+      {{service}}
+    </p>
+  </v-card >
+
+  <router-link v-for="service in data" :to="{ path: '/services/' + service.id } ">
  
+
+
+
+ <div class="parallax-card-wrapper">
+<v-card  rounded class="card" >
+  <v-card-text>
+<h1>{{service }}</h1>
+  </v-card-text>
+ <v-img  class="card-bg"
+
+ height="220px"
+ cover
+></v-img>
+</v-card>
+</div>
+
+  </router-link>
+
+
+
 
 
 </v-row>
@@ -24,12 +53,17 @@
 </template>
 
 <script>
+import store from '../../store';
+
 
 export default {
   props: ["dataImage"],
   data: () => ({
     show: false,
     dialog: false,
+    services: {},
+    data: [],
+
     items: [
       { title: 'Tiktok', description: 'get tiktok views', link:'/services/tiktok'  , image: 'https://icones.pro/wp-content/uploads/2021/03/logo-icone-tiktok-simbolo.png' },
       { title: 'Instagram', description: 'get tiktok likes',link:'/services/instagram'  , image: 'https://lecoindudigital.fr/wp-content/uploads/2017/06/instagram-Logo-PNG-Transparent-Background-download-1.png'},
@@ -37,8 +71,27 @@ export default {
     ],
  
   }),
+  computed:{
+        getService(){
+          return store.getters.getService[0]
+        }
+      },
+      methods: {
+        getServices(){
+          store.dispatch('getService')
+        }
+      },
 mounted(){
   window.localStorage.removeItem('vuex')
+  this.getServices()
+
+  this.services = store.getters.getService
+
+  this.data.push(store.getters.getService)
+
+
+
+
 
 }
 }
