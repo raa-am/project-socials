@@ -1,5 +1,7 @@
 <template>
-
+  <v-parallax 
+    src=""
+    >
   <v-app>
     <v-app-bar v-if="hide==false">
       <TopNav   />
@@ -26,6 +28,7 @@
 
     </v-footer>
   </v-app>
+</v-parallax>
 </template>
 <script>
 

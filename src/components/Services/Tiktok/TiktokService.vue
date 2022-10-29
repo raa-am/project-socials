@@ -111,7 +111,7 @@
           <h5>Quantity:</h5>  
           <p class="d-flex justify-center"> {{cart[0].quantity}} units * {{selected}}</p>
           <v-slider       color="#F44764"
-        hint="test" label="Service:" step="25" :max="10000" :min="200" v-model="slider" tick-size="10"></v-slider>
+        hint="test" label="Service:" step="50" :max="10000" :min="200" v-model="slider" tick-size="10"></v-slider>
 
           <v-divider></v-divider>
 
@@ -238,7 +238,7 @@ export default {
         this.priceID = "price_1LlEvuKp9Uk9dS5lDOzF52Gr";
         const name = this.items[2].title
         const slider = this.slider;
-        const totalPrice = this.slider * 0.02;
+        const totalPrice = this.slider * 0.015;
         // this.priceID = 'price_1LpwpdKp9Uk9dS5lvnGNrLJy';
 
         this.cart[0].quantity = slider;

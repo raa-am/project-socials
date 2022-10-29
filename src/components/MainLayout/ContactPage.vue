@@ -5,9 +5,7 @@
    
       <v-row   >
 
-    <v-card
-  
-    class="d-flex flex-wrap justify-center mx-auto"
+    <v-card class="d-flex flex-wrap justify-center mx-auto"
       
     >
       <v-col >
