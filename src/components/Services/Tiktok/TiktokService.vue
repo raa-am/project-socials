@@ -8,7 +8,7 @@
   <v-row class="d-flex justify-center ">
 
   <v-layout class="d-flex flex-wrap justify-center align-center" >
-      <v-card  class="respLayout" max-width="100vh" min-height="100vh" >
+      <v-card id="borderDemo" rounded class="respLayout" max-width="100vh" min-height="100vh" >
         <v-carousel hide-delimiters >
           <v-carousel-item 
           
@@ -31,7 +31,7 @@
             <v-tab value="three">Account requirements</v-tab>
           </v-tabs>
 
-          <v-card-text class="d-flex align-center " >
+          <v-card-text  class="d-flex align-center " >
             <v-window class="d-flex justify-center align-center "  v-model="tab"  >
               <v-window-item value="one">
                 <p class="text--primary">
@@ -92,7 +92,7 @@
 
 
 <v-layout  class="d-flex flex-wrap justify-center align-center"   >
-          <v-card elevation="0" outlined class="respPayOut"  >
+          <v-card id="borderDemo" rounded  elevation="0" outlined class="respPayOut"  >
             <v-form
         ref="form"
         v-model="valid"
@@ -110,7 +110,7 @@
     
           <h5>Quantity:</h5>  
           <p class="d-flex justify-center"> {{cart[0].quantity}} units * {{selected}}</p>
-          <v-slider       color="#F44764"
+          <v-slider       color="#FFA500"
         hint="test" label="Service:" step="50" :max="10000" :min="200" v-model="slider" tick-size="10"></v-slider>
 
           <v-divider></v-divider>

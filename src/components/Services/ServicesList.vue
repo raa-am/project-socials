@@ -99,8 +99,8 @@ h1+p, p+p {
         0.6s $hoverEasing,
         box-shadow 2s $hoverEasing;
       box-shadow:
-        rgba(#F44764, 0.7) 0 0 40px 5px,
-        rgba(#F44764, 1) 0 0 0 1px,
+        rgba(#FFA500, 0.7) 0 0 40px 5px,
+        rgba(#FFA500, 1) 0 0 0 1px,
 
     }
   }

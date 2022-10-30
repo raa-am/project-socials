@@ -10,6 +10,12 @@ import { VBtn } from 'vuetify/components'
 import { VFooter } from 'vuetify/components'
 import { VLayout } from 'vuetify/components'
 import {VTextField} from 'vuetify/components'
+import {VSelect} from 'vuetify/components'
+import {VCard} from 'vuetify/components'
+import {VRow} from 'vuetify/components'
+
+
+
 
 
 
@@ -18,7 +24,11 @@ const vuetify =  createVuetify({
     VBtnAlt: VBtn,
     VFooter:VFooter,
     VLayout:VLayout,
+    VRow:VRow,
+    VSelect:VSelect,
+    VCard:VCard,
     VTextField:VTextField,
+    
   },
   // https://next.vuetifyjs.com/features/global-configuration/
     icons: {
@@ -50,9 +60,21 @@ const vuetify =  createVuetify({
     },
     VSheet: {
       color: 'primary',
+
     },
     VLayout: {
       color: 'primary',
+      borderColor: 'primary',
+
+    },
+    VSelect:{
+      borderColor: 'primary',
+      color: 'primary',
+
+    },
+    VCard:{
+      border: '1px solid white',
+      
     },
     
 
@@ -64,9 +86,10 @@ const vuetify =  createVuetify({
       dark: {
         dark: true,
         colors: {
-          primary: '#F44764',
-          secondary:"#F44764"
-        }
+          primary: '#FFA500',
+          secondary:"#FFD700"
+        },
+
       }
     }
   },

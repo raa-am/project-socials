@@ -1,7 +1,5 @@
 <template>
-  <v-parallax 
-    src=""
-    >
+
   <v-app>
     <v-app-bar v-if="hide==false">
       <TopNav   />
@@ -28,7 +26,6 @@
 
     </v-footer>
   </v-app>
-</v-parallax>
 </template>
 <script>
 
@@ -106,4 +103,8 @@ export default {
 [v-cloak] > * { display:none }
 [v-cloak]::before { content: "loading…" }
 
+#borderDemo {
+border: 5px inset #FFA500;
+border-radius: 10px 10px 10px 10px;
+}
 </style>
