@@ -3,10 +3,26 @@
 
 
    
-      <v-row   >
+      <v-col   class="d-flex flex-wrap justify-center mx-auto" >
+       <v-card rounded  id="borderDemo" >
 
-    <v-card class="d-flex flex-wrap justify-center mx-auto"
+        <v-card class="d-flex flex-wrap justify-center "
       
+      >
+        <h2>Contact us</h2>
+  
+    
+  
+    
+        <v-divider></v-divider>
+    
+        <v-card-actions >
+          <v-spacer></v-spacer>
+    
+
+        </v-card-actions>
+      </v-card>
+    <v-card  class="d-flex flex-wrap justify-center "
     >
       <v-col >
         <v-text-field
@@ -46,7 +62,7 @@
       <v-card-actions >
         <v-spacer></v-spacer>
   
-        <v-btn color="success" variant="outlined">
+        <v-btn variant="outlined">
           Send 
   
           <v-icon icon="mdi-chevron-right" end></v-icon>
@@ -54,7 +70,10 @@
       </v-card-actions>
     </v-card>
 
-    </v-row>
+  </v-card>
+    
+
+    </v-col>
 
   </template>
   <script>

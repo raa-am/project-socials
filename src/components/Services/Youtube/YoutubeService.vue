@@ -2,13 +2,13 @@
     <!-- <v-img
             height="200"
             width="600"
-            src="https://upload.wikimedia.org/wikipedia/fr/thumb/7/7f/TikTok_Logo.svg/2560px-TikTok_Logo.svg.png"
+            src="https://upload.wikimedia.org/wikipedia/fr/thumb/7/7f/Youtube_Logo.svg/2560px-Youtube_Logo.svg.png"
           >
           </v-img> -->
     <v-row class="d-flex justify-center ">
   
     <v-layout class="d-flex flex-wrap justify-center align-center" >
-        <v-card  class="respLayout" max-width="100vh" min-height="100vh" >
+        <v-card rounded  id="borderDemo"  class="respLayout" max-width="100vh" min-height="100vh" >
           <v-carousel hide-delimiters >
             <v-carousel-item 
             
@@ -21,7 +21,7 @@
           </v-carousel>
   
           <v-card-title class="d-flex justify-center align-center mb-2" 
-                >Tiktok Service</v-card-title
+                >Youtube Service</v-card-title
               >
               <v-divider></v-divider>
   
@@ -91,8 +91,8 @@
         </v-layout>
   
   
-  <v-layout  class="d-flex flex-wrap justify-center align-center"   >
-            <v-card elevation="0" outlined class="respPayOut"  >
+  <v-layout  class="d-flex flex-wrap justify-start align-center"   >
+            <v-card rounded  id="borderDemo"  elevation="0" outlined class="respPayOut"  >
               <v-form
           ref="form"
           v-model="valid"
@@ -160,9 +160,9 @@
         loading: false,
         tab: null,
         items: [
-          { title: "Tiktok Viewers", prices: "0.05$ per unit" },
-          { title: "Tiktok Likes", prices: "0.10$ per unit" },
-          { title: "Tiktok Followers", prices: "0.20$ per unit" },
+          { title: "Youtube Viewers", prices: "0.05$ per unit" },
+          { title: "Youtube Likes", prices: "0.10$ per unit" },
+          { title: "Youtube Followers", prices: "0.20$ per unit" },
         ],
         publishableKey:
           "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",

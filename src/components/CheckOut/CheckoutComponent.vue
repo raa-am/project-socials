@@ -79,7 +79,7 @@
               hide-details
               @click="Switch" 
             ></v-switch>
-            <v-btn :disabled="isDisabled" variant="outlined" @click="CheckOut" color="success" ><h2> Pay {{Cart.totalPrice}}$ </h2></v-btn>
+            <v-btn :disabled="isDisabled" variant="outlined" @click="CheckOut" ><h2> Pay {{Cart.totalPrice}}$ </h2></v-btn>
 
 
 

@@ -91,7 +91,7 @@
       </v-layout>
 
 
-<v-layout  class="d-flex flex-wrap justify-center align-center"   >
+<v-layout  class="d-flex flex-wrap justify-start align-center"   >
           <v-card id="borderDemo" rounded  elevation="0" outlined class="respPayOut"  >
             <v-form
         ref="form"

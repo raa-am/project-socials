@@ -2,7 +2,7 @@
 <transition name="fade">
 
     <v-row  :is="Component" >
-        <v-card  class="d-flex flex-wrap justify-center mx-auto">
+        <v-card id="borderDemo" rounded   max-width="100vh" class="d-flex flex-wrap justify-center mx-auto">
             <v-card-text>
                 <p class="text-left">
 
@@ -99,6 +99,10 @@ SocialHub is not liable for any damage/loss of videos, social media accounts, an
 
 </p>
                 </v-card-text>
+                <v-card-actions class="d-flex justify-center">
+      <v-btn  to="/" ><h2> Accept and leave</h2></v-btn>
+
+    </v-card-actions>
         </v-card>
 
     </v-row>
