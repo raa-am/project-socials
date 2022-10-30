@@ -98,6 +98,7 @@ SocialHub is not liable for any damage/loss of videos, social media accounts, an
 
 
 </p>
+
                 </v-card-text>
                 <v-card-actions class="d-flex justify-center">
       <v-btn  to="/" ><h2> Accept and leave</h2></v-btn>
