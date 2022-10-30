@@ -47,7 +47,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../components/MainLayout/ContactPage.vue')
+      component: () => import('../components/MainLayout/MainPages/ContactPage.vue')
     },
     {
       path: '/faq',
@@ -55,7 +55,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../components/MainLayout/FaqPage.vue')
+      component: () => import('../components/MainLayout/MainPages/FaqPage.vue')
     },
     {
       path: '/cgu',
@@ -63,7 +63,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../components/MainLayout/CguPage.vue')
+      component: () => import('../components/MainLayout/MainPages/CguPage.vue')
     },
     {
       path: '/services',
