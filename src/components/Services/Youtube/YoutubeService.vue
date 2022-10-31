@@ -162,7 +162,7 @@
         items: [
           { title: "Youtube Viewers", prices: "0.05$ per unit" },
           { title: "Youtube Likes", prices: "0.10$ per unit" },
-          { title: "Youtube Followers", prices: "0.20$ per unit" },
+          { title: "Youtube Followers", prices: "0.15$ per unit" },
         ],
         publishableKey:
           "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
@@ -201,7 +201,7 @@
   
       Selected() {
         if (this.selected === "0.05$ per unit") {
-          this.priceID = "price_1Lq06BKp9Uk9dS5lQwGIFftt";
+          this.priceID = "price_1LynBlKp9Uk9dS5lBsngbknG";
           const name = this.items[0].title
           const slider = this.slider;
           const totalPrice = this.slider * 0.005
@@ -214,7 +214,7 @@
         }
   
         if (this.selected === "0.10$ per unit") {
-          this.priceID = "price_1LpyZ3Kp9Uk9dS5lkn3W56km";
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
           const name = this.items[1].title
           const slider = this.slider;
           const totalPrice = this.slider * 0.01;
@@ -226,8 +226,8 @@
           this.cart[0].name = name;
   
         }
-        if (this.selected === "0.20$ per unit") {
-          this.priceID = "price_1LlEvuKp9Uk9dS5lDOzF52Gr";
+        if (this.selected === "0.15$ per unit") {
+          this.priceID = "price_1LynDzKp9Uk9dS5ljP7cG4M9";
           const name = this.items[2].title
           const slider = this.slider;
           const totalPrice = this.slider * 0.02;

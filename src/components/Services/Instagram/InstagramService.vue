@@ -104,7 +104,7 @@
           <v-card-title>Choose your plan:</v-card-title>
           <br>
 
-          <v-select variant="outlined"  transition="scroll-y-transition"
+          <v-select variant="outlined" 
             :on-change="Selected()" :items="items" v-model="selected" label="Service:"
             :item-value="'prices'">
           </v-select>
@@ -160,17 +160,17 @@ export default {
       loading: false,
       tab: null,
       items: [
-        { title: "Instagram Viewers", prices: "0.05$ per unit" },
+        { title: "Instagram Viewers (Reels only)", prices: "0.05$ per unit" },
         { title: "Instagram Likes", prices: "0.10$ per unit" },
-        { title: "Instagram Followers", prices: "0.20$ per unit" },
+        { title: "Instagram Followers", prices: "0.15$ per unit" },
       ],
       publishableKey:
         "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
  
       cart: [{ quantity: "", price: "" , totalPrice: "", name:"" }],
       client : {email:"", url:""},
-      successURL: "http://localhost:5173/success",
-      cancelURL: "http://localhost:5173/error",
+      successURL: "https://socialhub.fun/success",
+      cancelURL: "https://socialhub.fun/error",
       images: [
         {
           src: "https://f.hellowork.com/blogdumoderateur/2018/06/logo-instagram.jpg",
@@ -200,7 +200,7 @@ export default {
 
     Selected() {
       if (this.selected === "0.05$ per unit") {
-        this.priceID = "price_1Lq06BKp9Uk9dS5lQwGIFftt";
+        this.priceID = "price_1Lyn7rKp9Uk9dS5lHu605wbG";
         const name = this.items[0].title
         const slider = this.slider;
         const totalPrice = this.slider * 0.005
@@ -213,7 +213,7 @@ export default {
       }
 
       if (this.selected === "0.10$ per unit") {
-        this.priceID = "price_1LpyZ3Kp9Uk9dS5lkn3W56km";
+        this.priceID = "price_1Lyn8XKp9Uk9dS5lrRPT3zNy";
         const name = this.items[1].title
         const slider = this.slider;
         const totalPrice = this.slider * 0.01;
@@ -225,11 +225,11 @@ export default {
         this.cart[0].name = name;
 
       }
-      if (this.selected === "0.20$ per unit") {
-        this.priceID = "price_1LlEvuKp9Uk9dS5lDOzF52Gr";
+      if (this.selected === "0.15$ per unit") {
+        this.priceID = "price_1LynAAKp9Uk9dS5l0qTTFt5f";
         const name = this.items[2].title
         const slider = this.slider;
-        const totalPrice = this.slider * 0.02;
+        const totalPrice = this.slider * 0.015;
         // this.priceID = 'price_1LpwpdKp9Uk9dS5lvnGNrLJy';
 
         this.cart[0].quantity = slider;

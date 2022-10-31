@@ -200,7 +200,7 @@ export default {
 
     Selected() {
       if (this.selected === "0.05$ per unit") {
-        this.priceID = "price_1Lq06BKp9Uk9dS5lQwGIFftt";
+        this.priceID = "price_1LymTzKp9Uk9dS5lfenJQJLK";
         const name = this.items[0].title
         const slider = this.slider;
         const totalPrice = this.slider * 0.005
@@ -213,7 +213,7 @@ export default {
       }
 
       if (this.selected === "0.10$ per unit") {
-        this.priceID = "price_1LpyZ3Kp9Uk9dS5lkn3W56km";
+        this.priceID = "price_1Lyma0Kp9Uk9dS5lKnyCcdnH";
         const name = this.items[1].title
         const slider = this.slider;
         const totalPrice = this.slider * 0.01;
@@ -226,7 +226,7 @@ export default {
 
       }
       if (this.selected === "0.20$ per unit") {
-        this.priceID = "price_1LlEvuKp9Uk9dS5lDOzF52Gr";
+        this.priceID = "price_1LymTzKp9Uk9dS5lfenJQJLK";
         const name = this.items[2].title
         const slider = this.slider;
         const totalPrice = this.slider * 0.015;

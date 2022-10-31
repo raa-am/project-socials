@@ -2,7 +2,7 @@
 
     <div class="d-flex flex-column fill-height justify-center align-center text-white">
       <h1 class="text-h4 font-weight-thin mb-4">
-        Vuetify
+        SocialHub
       </h1>
       <v-col justify="space-around">
       <v-card width="400">
