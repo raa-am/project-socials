@@ -8,6 +8,7 @@
     :line-items="lineItems"
     :success-url="successURL"
     :cancel-url="cancelURL"
+    :allow_promotion_codes = "true"
   />
 
 <v-row class="d-flex justify-center ">

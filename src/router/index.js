@@ -77,6 +77,26 @@ const router = createRouter({
       component: CheckoutPage
 
     },
+/*     {
+      path: '/services/tiktok',
+      name: 'service-tiktok',
+      component: TiktokPage
+    },
+    {
+      path: '/services/instagram',
+      name: 'service-instagram',
+      component: InstagramPage
+    },
+    {
+      path: '/services/youtube',
+      name: 'service-youtube',
+      component: YoutubePage
+    }, */
+    {
+      path: '/services/tiktok/packages',
+      name: 'service-tiktok',
+      component: TiktokPage
+    },
     {
       path: '/services/tiktok',
       name: 'service-tiktok',

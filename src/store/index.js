@@ -3,6 +3,8 @@ import createPersistedState from "vuex-persistedstate";
 import {db} from './../firebase/firebaseinit'
 import { getFirestore, collection, query, where, getDocs, orderBy, doc, setDoc, getDoc, onSnapshot, deleteDoc } from "firebase/firestore";
 import orders from './orders'
+import services from './services'
+
 import router from './../router'
 import { useRoute } from 'vue-router'
 
@@ -26,6 +28,7 @@ getters:{
 },
 modules: {
   orders,
+  services,
 
 },
 

@@ -9,6 +9,7 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "@chec/commerce.js": "^2.8.0",
     "@mdi/font": "^5.9.55",
     "@vue-stripe/vue-stripe": "^4.4.4",
     "firebase": "^9.10.0",
