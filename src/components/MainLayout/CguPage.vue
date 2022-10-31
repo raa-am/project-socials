@@ -1,9 +1,12 @@
 <template v-slot="{ Component }">
 <transition name="fade">
 
-    <v-row  :is="Component" >
-        <v-card id="borderDemo" rounded   max-width="100vh" class="d-flex flex-wrap justify-center mx-auto">
-            <v-card-text>
+    <v-row  :is="Component" class="d-flex flex-wrap justify-center " >
+
+        <v-card id="borderDemo" rounded   max-width="100vh" >
+          <v-sheet class="d-flex flex-wrap justify-center " ><h1>General conditions</h1> </v-sheet>
+
+            <v-card-text  >
                 <p class="text-left">
 
                 <h3>Introduction:</h3>
@@ -100,7 +103,7 @@ SocialHub is not liable for any damage/loss of videos, social media accounts, an
 </p>
                 </v-card-text>
                 <v-card-actions class="d-flex justify-center">
-      <v-btn  to="/" ><h2> Accept and leave</h2></v-btn>
+      <v-btn variant="outlined" to="/" ><h2> Accept and leave</h2></v-btn>
 
     </v-card-actions>
         </v-card>

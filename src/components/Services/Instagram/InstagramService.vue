@@ -175,15 +175,6 @@ export default {
         {
           src: "https://f.hellowork.com/blogdumoderateur/2018/06/logo-instagram.jpg",
         },
-        {
-          src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
-        },
-        {
-          src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
-        },
-        {
-          src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
-        },
       ],
       emailRules: [
         v => !!v || 'E-mail is required',

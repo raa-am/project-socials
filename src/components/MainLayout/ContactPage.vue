@@ -5,11 +5,12 @@
    
       <v-col   class="d-flex flex-wrap justify-center mx-auto" >
        <v-card rounded  id="borderDemo" >
+        <v-sheet class="d-flex flex-wrap justify-center " ><h1>Contact Us</h1> </v-sheet>
 
         <v-card class="d-flex flex-wrap justify-center "
       
       >
-        <h2>Contact us</h2>
+    
   
     
   
@@ -63,9 +64,8 @@
         <v-spacer></v-spacer>
   
         <v-btn variant="outlined">
-          Send 
-  
-          <v-icon icon="mdi-chevron-right" end></v-icon>
+          Send ticket 
+          <v-icon icon="mdi-email-send"></v-icon>
         </v-btn>
       </v-card-actions>
     </v-card>

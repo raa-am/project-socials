@@ -175,15 +175,7 @@
           {
             src: "https://www.meilleure-innovation.com/wp-content/uploads/2021/07/logo-youtube-une-788x444.png",
           },
-          {
-            src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
-          },
-          {
-            src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
-          },
-          {
-            src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
-          },
+
         ],
         emailRules: [
           v => !!v || 'E-mail is required',
