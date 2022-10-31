@@ -201,7 +201,7 @@
   
       Selected() {
         if (this.selected === "0.05$ per unit") {
-          this.priceID = "price_1LynBlKp9Uk9dS5lBsngbknG";
+          this.priceID = "price_1LynSZKp9Uk9dS5lO2j8LScl";
           const name = this.items[0].title
           const slider = this.slider;
           const totalPrice = this.slider * 0.005

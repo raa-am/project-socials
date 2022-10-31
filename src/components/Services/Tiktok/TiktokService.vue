@@ -162,7 +162,7 @@ export default {
       items: [
         { title: "Tiktok Viewers", prices: "0.05$ per unit" },
         { title: "Tiktok Likes", prices: "0.10$ per unit" },
-        { title: "Tiktok Followers", prices: "0.20$ per unit" },
+        { title: "Tiktok Followers", prices: "0.15$ per unit" },
       ],
       publishableKey:
         "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
@@ -225,7 +225,7 @@ export default {
         this.cart[0].name = name;
 
       }
-      if (this.selected === "0.20$ per unit") {
+      if (this.selected === "0.15$ per unit") {
         this.priceID = "price_1LymTzKp9Uk9dS5lfenJQJLK";
         const name = this.items[2].title
         const slider = this.slider;
