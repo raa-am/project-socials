@@ -160,9 +160,9 @@ export default {
       loading: false,
       tab: null,
       items: [
-        { title: "Instagram Viewers (Reels only)", prices: "0.05$ per unit" },
-        { title: "Instagram Likes", prices: "0.10$ per unit" },
-        { title: "Instagram Followers", prices: "0.15$ per unit" },
+        { title: "Instagram Viewers (Reels only)", prices: "0.01$ per unit" },
+        { title: "Instagram Likes", prices: "0.01$ per unit" },
+        { title: "Instagram Followers", prices: "0.02$ per unit" },
       ],
       publishableKey:
         "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
@@ -199,8 +199,8 @@ export default {
     },
 
     Selected() {
-      if (this.selected === "0.05$ per unit") {
-        this.priceID = "price_1Lyn7rKp9Uk9dS5lHu605wbG";
+      if (this.selected === "0.01$ per unit") {
+        this.priceID = "price_1Lz8QzKp9Uk9dS5lTrQoPx7A";
         const name = this.items[0].title
         const slider = this.slider;
         const totalPrice = this.slider * 0.005
@@ -212,8 +212,8 @@ export default {
         this.cart[0].price = this.priceID;
       }
 
-      if (this.selected === "0.10$ per unit") {
-        this.priceID = "price_1Lyn8XKp9Uk9dS5lrRPT3zNy";
+      if (this.selected === "0.01$ per unit") {
+        this.priceID = "price_1Lz8RuKp9Uk9dS5lNadAfpH2";
         const name = this.items[1].title
         const slider = this.slider;
         const totalPrice = this.slider * 0.01;
@@ -225,8 +225,8 @@ export default {
         this.cart[0].name = name;
 
       }
-      if (this.selected === "0.15$ per unit") {
-        this.priceID = "price_1LynAAKp9Uk9dS5l0qTTFt5f";
+      if (this.selected === "0.02$ per unit") {
+        this.priceID = "price_1Lz8SRKp9Uk9dS5lrTzjznlA";
         const name = this.items[2].title
         const slider = this.slider;
         const totalPrice = this.slider * 0.015;

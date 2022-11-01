@@ -162,7 +162,7 @@ export default {
       items: [
         { title: "Tiktok Viewers", prices: "0.05$ per unit" },
         { title: "Tiktok Likes", prices: "0.10$ per unit" },
-        { title: "Tiktok Followers", prices: "0.15$ per unit" },
+        { title: "Tiktok Followers", prices: "0.02 per unit" },
       ],
       publishableKey:
         "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
@@ -199,11 +199,11 @@ export default {
     },
 
     Selected() {
-      if (this.selected === "0.05$ per unit") {
-        this.priceID = "price_1LymTzKp9Uk9dS5lfenJQJLK";
+      if (this.selected === "0.01$ per unit") {
+        this.priceID = "price_1Lz8NdKp9Uk9dS5lWlAncqoy";
         const name = this.items[0].title
         const slider = this.slider;
-        const totalPrice = this.slider * 0.005
+        const totalPrice = this.slider * 0.01
         // this.priceID = 'price_1LpwpdKp9Uk9dS5lvnGNrLJy';
 
         this.cart[0].quantity = slider;
@@ -212,8 +212,8 @@ export default {
         this.cart[0].price = this.priceID;
       }
 
-      if (this.selected === "0.10$ per unit") {
-        this.priceID = "price_1Lyma0Kp9Uk9dS5lKnyCcdnH";
+      if (this.selected === "0.01$ per unit") {
+        this.priceID = "price_1Lz8ODKp9Uk9dS5lVUHPHwMt";
         const name = this.items[1].title
         const slider = this.slider;
         const totalPrice = this.slider * 0.01;
@@ -225,11 +225,11 @@ export default {
         this.cart[0].name = name;
 
       }
-      if (this.selected === "0.15$ per unit") {
-        this.priceID = "price_1LymTzKp9Uk9dS5lfenJQJLK";
+      if (this.selected === "0.02 per unit") {
+        this.priceID = "price_1Lz8OpKp9Uk9dS5liYrCJ7HE";
         const name = this.items[2].title
         const slider = this.slider;
-        const totalPrice = this.slider * 0.015;
+        const totalPrice = this.slider * 0.02;
         // this.priceID = 'price_1LpwpdKp9Uk9dS5lvnGNrLJy';
 
         this.cart[0].quantity = slider;
