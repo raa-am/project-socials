@@ -24,22 +24,37 @@ const actions = {
     
     async getPlans({commit}, serviceData){
 
+      const docRef = collection(db, "Services"  );
+      const docSnap = await getDocs(docRef)
+
+
+      docSnap.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id , '>' , doc.data())
+
+        serviceData =  [{id: doc.id, title: doc.data()}]
+
+        commit( 'ADD_SERVICE',  serviceData);
+
+
+      });
 
         const querySnapshot =  await getDocs(collection(db, "Services"))
-       const datas = querySnapshot.docs
 
-     datas.forEach((doc) => {
+
+        querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
-          serviceData =  [{id: datas[0].id},{id: datas[1].id},{id: datas[2].id}]
+          console.log(doc.id , '>' , doc.data())
 
+          serviceData =  [{id: doc.id, title: doc.data()}]
+
+          commit( 'ADD_SERVICE',  serviceData);
 
 
         });
 
-        commit( 'ADD_SERVICE',  serviceData);
         console.log(serviceData)
 
-        console.log(datas[1].id)
   
   
   

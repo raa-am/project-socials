@@ -5,8 +5,11 @@
           src="https://upload.wikimedia.org/wikipedia/fr/thumb/7/7f/TikTok_Logo.svg/2560px-TikTok_Logo.svg.png"
         >
         </v-img> -->
-  <v-row class="d-flex justify-center ">
     
+
+        <v-layout class="d-flex justify-center flex-wrap" >
+
+        <v-row class="d-flex justify-center" >
           <v-card id="borderDemo" rounded  elevation="0" outlined class="respPayOut"  >
             <v-sheet class="d-flex flex-wrap justify-center " ><h1>Plans:</h1> </v-sheet>
         <v-list v-for="plan in plans" >
@@ -18,12 +21,12 @@
         
           </v-card>
 
-        <v-col class="d-flex justify-center flex-nowrap" >
-          <v-layout class="d-flex justify-center flex-wrap" >
+
 
      <router-link  v-for="item in items" :to="item.link">
    <div class="parallax-card-wrapper">
- <v-card  rounded class="card" >
+    {{item.title}}
+ <v-card  rounded class="card mx-auto" >
    <v-img  class="card-bg"
    :src="item.image"
    height="220px"
@@ -32,15 +35,14 @@
  </v-card>
 </div>
 </router-link>
+</v-row>
  
 </v-layout>
-        </v-col>
 
 
 
 
         
-      </v-row>
 
 </template>
 
@@ -72,8 +74,8 @@ export default {
       loading: false,
       tab: null,
       plans: [ { title: 'Views'},
-      { title: 'Likes', },
-      { title: 'Followers', }],
+      { title: 'Likes' },
+      { title: 'Followers' }],
       publishableKey:
         "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
  
@@ -105,7 +107,7 @@ this.getPlan()
 const items = store.getters.Plans
 
 
-console.log(this.plans)
+console.log(this.plans[0])
 
 this.plans.push(items)
 
