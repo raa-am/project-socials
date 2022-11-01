@@ -155,12 +155,12 @@ export default {
   data() {
     return {
       valid:true,
-      selected: '0.05$ per unit',
+      selected: '0.01$ per units',
       slider: 200,
       loading: false,
       tab: null,
       items: [
-        { title: "Instagram Viewers (Reels only)", prices: "0.01$ per unit" },
+        { title: "Instagram Viewers(Reels)", prices: "0.01$ per units" },
         { title: "Instagram Likes", prices: "0.01$ per unit" },
         { title: "Instagram Followers", prices: "0.02$ per unit" },
       ],
@@ -199,7 +199,7 @@ export default {
     },
 
     Selected() {
-      if (this.selected === "0.01$ per unit") {
+      if (this.selected === "0.01$ per units") {
         this.priceID = "price_1Lz8QzKp9Uk9dS5lTrQoPx7A";
         const name = this.items[0].title
         const slider = this.slider;

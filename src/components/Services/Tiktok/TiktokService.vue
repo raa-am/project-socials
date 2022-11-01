@@ -155,14 +155,14 @@ export default {
   data() {
     return {
       valid:true,
-      selected: '0.05$ per unit',
+      selected: '0.01$ per units',
       slider: 200,
       loading: false,
       tab: null,
       items: [
-        { title: "Tiktok Viewers", prices: "0.05$ per unit" },
-        { title: "Tiktok Likes", prices: "0.10$ per unit" },
-        { title: "Tiktok Followers", prices: "0.02 per unit" },
+        { title: "Tiktok Viewers", prices: "0.01$ per units", id:"viewers" },
+        { title: "Tiktok Likes", prices: "0.01$ per unit" , id: "likes"},
+        { title: "Tiktok Followers", prices: "0.02$ per unit", id:"followers" },
       ],
       publishableKey:
         "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
@@ -199,7 +199,7 @@ export default {
     },
 
     Selected() {
-      if (this.selected === "0.01$ per unit") {
+      if (this.selected === "0.01$ per units") {
         this.priceID = "price_1Lz8NdKp9Uk9dS5lWlAncqoy";
         const name = this.items[0].title
         const slider = this.slider;
@@ -225,7 +225,7 @@ export default {
         this.cart[0].name = name;
 
       }
-      if (this.selected === "0.02 per unit") {
+      if (this.selected === "0.02$ per unit") {
         this.priceID = "price_1Lz8OpKp9Uk9dS5liYrCJ7HE";
         const name = this.items[2].title
         const slider = this.slider;

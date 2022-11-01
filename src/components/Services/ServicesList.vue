@@ -3,7 +3,7 @@
    
    <router-link v-for="item in items" :to="item.link">
    <div class="parallax-card-wrapper">
- <v-card  rounded class="card" >
+ <v-card rounded class="card" >
    <v-img  class="card-bg"
    :src="item.image"
    height="220px"
