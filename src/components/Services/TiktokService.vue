@@ -9,8 +9,7 @@
 
         <v-layout class="d-flex justify-center flex-wrap" >
 
-        <v-row class="d-flex justify-center" >
-          <v-card id="borderDemo" rounded  elevation="0" outlined class="respPayOut"  >
+<!--           <v-card id="borderDemo" rounded  elevation="0" outlined class="respPayOut"  >
             <v-sheet class="d-flex flex-wrap justify-center " ><h1>Plans:</h1> </v-sheet>
         <v-list v-for="plan in plans" >
                       <v-btn min-width="200px" >  {{plan.title}}    
@@ -20,22 +19,25 @@
 
         
           </v-card>
+ -->
 
 
+     <router-link  v-for="item in plans" to="/ll">
 
-     <router-link  v-for="item in items" :to="item.link">
    <div class="parallax-card-wrapper">
-    {{item.title}}
+    <h1>{{item.title}}</h1>
  <v-card  rounded class="card mx-auto" >
    <v-img  class="card-bg"
-   :src="item.image"
    height="220px"
    cover
  ></v-img>
  </v-card>
 </div>
+
+
 </router-link>
-</v-row>
+
+
  
 </v-layout>
 
@@ -73,9 +75,7 @@ export default {
       minAmount:200,
       loading: false,
       tab: null,
-      plans: [ { title: 'Views'},
-      { title: 'Likes' },
-      { title: 'Followers' }],
+      plans: [],
       publishableKey:
         "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
  
@@ -105,11 +105,11 @@ export default {
 this.getPlan()
 
 const items = store.getters.Plans
+this.plans = items
 
 
-console.log(this.plans[0])
+console.log(items)
 
-this.plans.push(items)
 
   }
 

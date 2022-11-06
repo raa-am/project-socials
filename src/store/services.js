@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 const state = {
-    serviceData : {},
+    serviceData : [],
     
 }
 
@@ -22,39 +22,28 @@ const actions = {
 
 
     
-    async getPlans({commit}, serviceData){
-
-      const docRef = collection(db, "Services"  );
-      const docSnap = await getDocs(docRef)
+    async getPlans({commit}, serviceData, docSnap){
 
 
-      docSnap.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id , '>' , doc.data())
 
-        serviceData =  [{id: doc.id, title: doc.data()}]
+        const querySnapshot =  await getDocs(collection(db, "Services" , "Tiktok" , "Views"))
 
-        commit( 'ADD_SERVICE',  serviceData);
-
-
-      });
-
-        const querySnapshot =  await getDocs(collection(db, "Services"))
-
+        serviceData =  []
 
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id , '>' , doc.data())
 
-          serviceData =  [{id: doc.id, title: doc.data()}]
+              docSnap = doc.data()
 
+              serviceData.push(docSnap)
+             
+             console.log(serviceData)
+          
           commit( 'ADD_SERVICE',  serviceData);
-
-
+   
         });
-
-        console.log(serviceData)
-
+      
+ 
   
   
   
@@ -65,7 +54,8 @@ const mutations = {
 
     ADD_SERVICE: (state, serviceData ) => {
 
-        state.serviceData.id = serviceData.id
+        state.serviceData = serviceData
+
 
 
       },
