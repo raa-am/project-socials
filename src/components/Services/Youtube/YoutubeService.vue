@@ -5,10 +5,10 @@
             src="https://upload.wikimedia.org/wikipedia/fr/thumb/7/7f/Youtube_Logo.svg/2560px-Youtube_Logo.svg.png"
           >
           </v-img> -->
-    <v-row class="d-flex justify-center ">
-  
-    <v-layout class="d-flex flex-wrap justify-center align-center" >
-        <v-card rounded  id="borderDemo"  class="respLayout" max-width="100vh" min-height="100vh" >
+    <v-row align-center>
+  <v-col  sm="12" md="8" lg="8" xl="10" >
+
+        <v-card  id="borderDemo" >
           <v-carousel hide-delimiters >
             <v-carousel-item 
             
@@ -88,11 +88,12 @@
               </v-window>
             </v-card-text>
           </v-card>
-        </v-layout>
   
-  
-  <v-layout  class="d-flex flex-wrap justify-start align-center"   >
-            <v-card rounded  id="borderDemo"  elevation="0" outlined class="respPayOut"  >
+          
+        </v-col>
+        <v-col sm="12" md="4" lg="4" xl="2">
+
+            <v-card  rounded  id="borderDemo" outlined  >
               <v-form
           ref="form"
           v-model="valid"
@@ -100,28 +101,45 @@
         >
   
           <v-card-text>
-            <v-card-title>Choose your plan:</v-card-title>
             <br>
   
             <v-select variant="outlined"
-              :on-change="Selected()" :items="items" v-model="selected" label="Service:"
-              :item-value="'prices'">
+              :on-change="Selected()" :items="itemsService" v-model="selectedService" label="SERVICES:"
+              :item-value="'title'">
             </v-select>
-      
-            <h5>Quantity:</h5>  
-            <p class="d-flex justify-center"> {{cart[0].quantity}} units * {{selected}}</p>
-            <v-slider       color="#F44764"
-          hint="test" label="Service:" step="25" :max="10000" :min="200" v-model="slider" tick-size="10"></v-slider>
+
+<!--             <v-select variant="outlined"
+             :items="itemsPackage" v-model="selectedPackage" label="Quantity:"
+              :item-value="'quantity'">
+            </v-select>
+       -->
+           
+            <v-chip
+            class="d-flex justify-center"
+      color="#FFA500"
+      label
+      text-color="white"
+    >
+      <v-icon start icon="mdi-account-group"></v-icon>
+      <h2 class="d-flex justify-center"> {{units}} units</h2>    </v-chip>
+            <v-slider       
+            color="#FFA500"
+            label="Service:"
+            :max="7"
+            step="1"
+            show-ticks="always"
+            tick-size="4"
+            v-model="slider" 
+            ></v-slider>
   
             <v-divider></v-divider>
   
-            <v-card-title>Your delivery information:</v-card-title>
             <br>
   
   
-            <v-text-field  variant="outlined" clearable  type="text" v-model="client.email" label=" Email " :rules="emailRules" required>
+            <v-text-field prepend-icon="mdi-at" variant="outlined" type="text" v-model="client.email" label=" EMAIL " :rules="emailRules" required>
             </v-text-field>
-            <v-text-field variant="outlined"  type="text"  v-model="client.url" label=" Url "  hint="Enter the url of your profile or your video"
+            <v-text-field prepend-icon="mdi-link-variant" variant="outlined"  type="text"  v-model="client.url" label=" URL"  hint="Enter the url of your profile/post"
    :rules="urlRules" required>
             </v-text-field>
           </v-card-text>
@@ -139,8 +157,8 @@
   
         </v-form>
             </v-card>
-          </v-layout>
   
+  </v-col>
           
         </v-row>
   
@@ -151,26 +169,35 @@
   export default {
   
     name:"ServicePage",
-      props: ['foo'],
     data() {
       return {
         valid:true,
-        selected: '0.05$ per unit',
-        slider: 200,
+        selectedService: 'Youtube Viewers',
+        selectedPackage:'250',
+        slider: 0,
+        units:0,
         loading: false,
         tab: null,
-        items: [
-          { title: "Youtube Viewers", prices: "0.05$ per unit" },
-          { title: "Youtube Likes", prices: "0.10$ per unit" },
-          { title: "Youtube Followers", prices: "0.15$ per unit" },
+        itemsService: [
+          { title: "Youtube Viewers"},
+          { title: "Youtube Likes"},
+          { title: "Youtube Followers"},
+        ],
+        itemsPackage: [
+          { title:'250', quantity: "250"},
+          { title:'500' , quantity: "500"},
+          { title:'1000' , quantity: "1000"},
+          { title:'2500' , quantity: "2500"},
+          { title:'5000' , quantity: "5000"},
+          { title:'10000' , quantity: "10000"},
+          { title:'25000' , quantity: "25000"},
+
         ],
         publishableKey:
           "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
    
         cart: [{ quantity: "", price: "" , totalPrice: "", name:"" }],
         client : {email:"", url:""},
-        successURL: "http://localhost:5173/success",
-        cancelURL: "http://localhost:5173/error",
         images: [
           {
             src: "https://www.meilleure-innovation.com/wp-content/uploads/2021/07/logo-youtube-une-788x444.png",
@@ -200,46 +227,353 @@
       },
   
       Selected() {
-        if (this.selected === "0.05$ per unit") {
+        if (this.selectedService === "Youtube Viewers" && this.slider === 0) {
           this.priceID = "price_1LynSZKp9Uk9dS5lO2j8LScl";
-          const name = this.items[0].title
-          const slider = this.slider;
-          const totalPrice = this.slider * 0.005
-          // this.priceID = 'price_1LpwpdKp9Uk9dS5lvnGNrLJy';
-  
-          this.cart[0].quantity = slider;
+          const name = this.itemsService[0].title
+     /*      const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+
+          const totalPrice = 2
+          const units = 250
+
+          this.units = units
+        /*   this.cart[0].quantity = slider; */
           this.cart[0].totalPrice = totalPrice.toFixed(2);
           this.cart[0].name = name;
           this.cart[0].price = this.priceID;
         }
   
-        if (this.selected === "0.10$ per unit") {
+        if (this.selectedService === "Youtube Viewers" && this.slider === 1) {
           this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
-          const name = this.items[1].title
-          const slider = this.slider;
-          const totalPrice = this.slider * 0.01;
-          // this.priceID = 'price_1LpwpdKp9Uk9dS5lvnGNrLJy';
-  
-          this.cart[0].quantity = slider;
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 3.50
+            const units = 500
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
           this.cart[0].totalPrice = totalPrice.toFixed(2);
           this.cart[0].price = this.priceID;
           this.cart[0].name = name;
   
         }
-        if (this.selected === "0.15$ per unit") {
-          this.priceID = "price_1LynDzKp9Uk9dS5ljP7cG4M9";
-          const name = this.items[2].title
-          const slider = this.slider;
-          const totalPrice = this.slider * 0.02;
-          // this.priceID = 'price_1LpwpdKp9Uk9dS5lvnGNrLJy';
-  
-          this.cart[0].quantity = slider;
+        if (this.selectedService === "Youtube Viewers" && this.slider === 2) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 5.50
+            const units = 1000
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
           this.cart[0].totalPrice = totalPrice.toFixed(2);
           this.cart[0].price = this.priceID;
           this.cart[0].name = name;
   
         }
+        if (this.selectedService === "Youtube Viewers" && this.slider === 3) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 7.50
+            const units = 2500
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Viewers" && this.slider === 4) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 10.00
+            const units = 5000
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Viewers" && this.slider === 5) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 20.00
+            const units = 10000
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Viewers" && this.slider === 6) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 30.00
+            const units = 25000
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Viewers" && this.slider === 7) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 30.00
+            const units = 50000
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+
+        if (this.selectedService === "Youtube Likes" && this.slider === 0) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 30.00
+            const units = 250
+            this.units = units
+          
+        /*   this.cart[0].quantity = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Likes" && this.slider === 1) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 30.00
+            const units = 500
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Likes" && this.slider === 2) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 30.00
+            const units = 1000
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Likes" && this.slider === 3) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 30.00
+            const units = 2500
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }       
+         if (this.selectedService === "Youtube Likes" && this.slider === 4) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 30.00
+            const units = 5000
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }       
+         if (this.selectedService === "Youtube Likes" && this.slider === 5) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 30.00
+            const units = 10000
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        
+        if (this.selectedService === "Youtube Likes" && this.slider === 6) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 30.00
+            const units = 25000
+            this.units = units
+        /*   this.cart[0].units = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Likes" && this.slider === 7) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 30.00
+            const units = 50000
+            this.units = units
+        /*   this.cart[0].units = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+
+        if (this.selectedService === "Youtube Followers" && this.slider === 0) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 10.00
+            const units = 250
+            this.units = units
+        /*   this.cart[0].units = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+
+        if (this.selectedService === "Youtube Followers" && this.slider === 1) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 10.00
+            const units = 500
+            this.units = units
+        /*   this.cart[0].quantity = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Followers" && this.slider === 2) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 10.00
+            const units = 1000
+            this.units = units
+        /*   this.cart[0].units = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Followers" && this.slider === 3) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 10.00
+            const units = 2500
+            this.units = units
+        /*   this.cart[0].units = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Followers" && this.slider === 4) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 10.00
+            const units = 5000
+            this.units = units
+        /*   this.cart[0].units = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Followers" && this.slider === 5) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 10.00
+            const units = 10000
+            this.units = units
+        /*   this.cart[0].units = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Followers" && this.slider === 6) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 10.00
+            const units = 25000
+            this.units = units
+        /*   this.cart[0].units = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        if (this.selectedService === "Youtube Followers" && this.slider === 7) {
+          this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+          const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+       /*    const totalPrice = this.slider * 0.01; */
+            const totalPrice = 10.00
+            const units = 50000
+            this.units = units
+        /*   this.cart[0].units = slider; */
+          this.cart[0].totalPrice = totalPrice.toFixed(2);
+          this.cart[0].price = this.priceID;
+          this.cart[0].name = name;
+  
+        }
+        
       },
+
+      
     },
   
   };
@@ -249,7 +583,7 @@
   
   @media screen and (width > 900px) {
     .respLayout {
-  
+
       min-width:100vh;
     }
     }
