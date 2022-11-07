@@ -111,13 +111,15 @@
           <h5>Quantity:</h5>  
           <p class="d-flex justify-center"> {{cart[0].quantity}} units * {{selected}}</p>
           <v-slider       color="#FFA500"
-        hint="test" label="Service:" step="50" :max="10000" :min="200" v-model="slider" tick-size="10"></v-slider>
+          v-model="slider[0]"
+        label="Service:"   
+      :max="2"
+      show-ticks="always" tick-size="2"></v-slider>
 
           <v-divider></v-divider>
 
           <v-card-title>Your delivery information:</v-card-title>
           <br>
-
 
           <v-text-field  variant="outlined" clearable  type="text" v-model="client.email" label=" Email " :rules="emailRules" required>
           </v-text-field>
@@ -127,7 +129,7 @@
         </v-card-text>
 
         <v-sheet class="d-flex justify-center align-center" >
-        <h1>{{cart[0].totalPrice}}  $</h1> 
+        <h1>{{cart.totalPrice}}  $</h1> 
         </v-sheet>
       <br>
         <v-card-actions class="d-flex justify-center">
@@ -154,9 +156,13 @@ export default {
     props: ['foo'],
   data() {
     return {
+      tickLabels: [
+          '250',
+          '500',
+      ],
       valid:true,
       selected: '0.01$ per units',
-      slider: 200,
+      slider: [250,300],
       loading: false,
       tab: null,
       items: [
@@ -186,7 +192,9 @@ export default {
       ],
     };
   },
-
+  mounted(){
+    console.log(this.tickLabels)
+  },
   methods: {
  
 
@@ -199,10 +207,11 @@ export default {
     },
 
     Selected() {
-      if (this.selected === "0.01$ per units") {
+      if (this.selected === "0.01$ per units" ) {
         this.priceID = "price_1Lz8NdKp9Uk9dS5lWlAncqoy";
         const name = this.items[0].title
-        const slider = this.slider;
+        const slider = this.slider
+        
         const totalPrice = this.slider * 0.01
         // this.priceID = 'price_1LpwpdKp9Uk9dS5lvnGNrLJy';
 
