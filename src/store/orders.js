@@ -9,7 +9,7 @@ const route = useRoute()
 console.log( router.currentRoute.value.params.id)
 
 const state = {
-    cart : {price:'', quantity:'', totalPrice: '', name:''},
+    cart : {price:'', quantity:'', totalPrice: '', name:'' , units:''},
     client : {email : '', url:''},
     orderId:  uuidv4(),
     orderData:{email:''},
@@ -71,9 +71,10 @@ const actions = {
      const order = {
         id: state.orderId ,
         createdAt: dateTime.toUTCString() ,
-        name:  getters.Cart.name,
         email: getters.User.email,
         url: getters.User.url,
+        name:  getters.Cart.name,
+        units:getters.Cart.units,
         quantity: getters.Cart.quantity,
         totalPrice: getters.Cart.totalPrice
       }
@@ -122,6 +123,8 @@ const mutations = {
           state.cart.price = cart.price
           state.cart.totalPrice = cart.totalPrice
           state.cart.name = cart.name
+          state.cart.units = cart.units
+
         },
 
         ADD_CLIENT: (state, client ) => {

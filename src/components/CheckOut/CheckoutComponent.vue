@@ -26,15 +26,19 @@
             <thead>
               <tr>
                 <th class="text-left">Product</th>
-                <th class="text-left">Quantity</th>
+                <th class="text-left">Units</th>
                 <th class="text-left">Price</th>
+                <th class="text-left">Quantity</th>
+
               </tr>
             </thead>
             <tbody>
               <tr>
                   <th class="text-left"> {{Cart.name}}</th>
-                  <th class="text-left"> {{Cart.quantity}}</th>
+                  <th class="text-left"> {{client.units}}</th>
                   <th class="text-left"> {{Cart.totalPrice}}$</th>
+                <th class="text-left">1</th>
+
 
               </tr>
             </tbody>
@@ -113,8 +117,8 @@ export default {
       authAccess: true,
       publishableKey:
         "pk_live_51LjZHQKp9Uk9dS5lvLmw54m2fvZDeQEXHEtbd8Yg80YfCOe4UKrOt4uPvknTBpQD18hniYKd5Afdgk1pgQMYqP5w00qSXSZ8GY",
-      lineItems: [{ quantity: "", price: "" }],
-      client: { email: store.getters.User.email, url: store.getters.User.url},
+      lineItems: [{ quantity:1, price: "" }],
+      client: { email: store.getters.User.email, url: store.getters.User.url , units: store.getters.Cart.units},
       successURL: "https://socialhub.fun/success/" + GenUid,
       cancelURL: "https://socialhub.fun/error",
       uid : ""
@@ -162,10 +166,8 @@ export default {
 
   mounted() {
 
-    const quantity = store.getters.Cart.quantity;
     const price = store.getters.Cart.price;
 
-    this.lineItems[0].quantity = quantity;
     this.lineItems[0].price = price;
 
  
