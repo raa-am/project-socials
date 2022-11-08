@@ -12,6 +12,7 @@
         ></v-expansion-panel>
       </v-expansion-panels>
     </v-card>
+    
 </v-col>
 </v-row>
   </template>

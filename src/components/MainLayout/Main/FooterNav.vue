@@ -10,9 +10,13 @@
     
     >
       <v-card-text>
+        <v-btn variant="text" to="/faq"><v-icon size="x-large" icon="mdi-frequently-asked-questions"></v-icon> </v-btn>
 
+        <v-btn variant="text" to="/contact"><v-icon size="x-large" icon="mdi-email"></v-icon> </v-btn>
 
-          <v-btn
+        <v-btn variant="text"  to="/cgu"><v-icon size="x-large" icon="mdi-information-outline"></v-icon> </v-btn>
+
+       <!--    <v-btn
           class="mx-4"
           icon="mdi-frequently-asked-questions"
           variant="plain"
@@ -32,7 +36,7 @@
           icon="mdi-information-outline"
           variant="plain"
           @click="GoToCgu()"
-        ></v-btn>
+        ></v-btn> -->
 
       </v-card-text>
 
