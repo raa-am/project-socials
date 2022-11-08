@@ -116,7 +116,7 @@ export default {
       isDisabled: false,
       authAccess: true,
       publishableKey:
-        "pk_test_51LjZHQKp9Uk9dS5lUK6gZ29C1v169gcxs4ocD7mhO3bzTUpoAdA9R7Gv4KlIkfQn2QTRCbmwQL4J4O4wjSZZH3OM00KB3Uq5So",
+        "pk_live_51LjZHQKp9Uk9dS5lvLmw54m2fvZDeQEXHEtbd8Yg80YfCOe4UKrOt4uPvknTBpQD18hniYKd5Afdgk1pgQMYqP5w00qSXSZ8GY",
       lineItems: [{ quantity:1, price: "" }],
       client: { email: store.getters.User.email, url: store.getters.User.url , units: store.getters.Cart.units},
       successURL: "http://localhost:5173/success/" + GenUid,

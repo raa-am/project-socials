@@ -121,7 +121,7 @@
               <v-icon start icon="mdi-account-group"></v-icon>
               <h2 class="d-flex justify-center"> {{ units }} units</h2>
             </v-chip>
-            <v-slider color="#FFA500" label="Service:" :max="7" step="1" show-ticks="always" tick-size="4"
+            <v-slider color="#FFA500" label="Service:" :max="8" step="1" show-ticks="always" tick-size="4"
               v-model="slider"></v-slider>
 
             <v-divider></v-divider>
@@ -240,12 +240,12 @@ export default {
 
     Selected() {
       if (this.selectedService === "Tiktok Viewers" && this.slider === 0) {
-        this.priceID = "price_1LynSZKp9Uk9dS5lO2j8LScl";
+        this.priceID = "price_1M1re5Kp9Uk9dS5lYhN2jKGn";
         const name = this.itemsService[0].title
         /*      const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
 
-        const totalPrice = 2
+        const totalPrice = 1
         const units = 250
 
         this.units = units
@@ -257,11 +257,11 @@ export default {
       }
 
       if (this.selectedService === "Tiktok Viewers" && this.slider === 1) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1reDKp9Uk9dS5lXD2y3DNF";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 3.50
+        const totalPrice = 2
         const units = 500
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -272,11 +272,11 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Viewers" && this.slider === 2) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1reHKp9Uk9dS5l3zHGBov7";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 5.50
+        const totalPrice = 3
         const units = 1000
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -286,11 +286,11 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Viewers" && this.slider === 3) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1reOKp9Uk9dS5lpozcDaPk";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 7.50
+        const totalPrice = 4.50
         const units = 2500
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -300,11 +300,11 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Viewers" && this.slider === 4) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1reRKp9Uk9dS5l4i6DWNLk";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 10.00
+        const totalPrice = 8.00
         const units = 5000
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -314,11 +314,11 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Viewers" && this.slider === 5) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1reYKp9Uk9dS5l3iMiQqB4";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 20.00
+        const totalPrice = 15.00
         const units = 10000
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -328,11 +328,11 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Viewers" && this.slider === 6) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1reoKp9Uk9dS5lCHzog5KP";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
+        const totalPrice = 33.00
         const units = 25000
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -342,12 +342,26 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Viewers" && this.slider === 7) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1resKp9Uk9dS5lOv3Sdl8C";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
+        const totalPrice = 62.00
         const units = 50000
+        this.units = units
+        /*   this.cart[0].quantity = slider; */
+        this.cart[0].totalPrice = totalPrice.toFixed(2);
+        this.cart[0].price = this.priceID;
+        this.cart[0].name = name;
+
+      }
+      if (this.selectedService === "Tiktok Viewers" && this.slider === 8) {
+        this.priceID = "price_1M1revKp9Uk9dS5lXrRKekKE";
+        const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+        /*    const totalPrice = this.slider * 0.01; */
+        const totalPrice = 110.00
+        const units = 100000
         this.units = units
         /*   this.cart[0].quantity = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -357,12 +371,12 @@ export default {
       }
 
       if (this.selectedService === "Tiktok Likes" && this.slider === 0) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1rpUKp9Uk9dS5lTfndGGxl";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 250
+        const totalPrice = 1.50
+        const units = 100
         this.units = units
 
         /*   this.cart[0].quantity = slider; */
@@ -372,12 +386,12 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Likes" && this.slider === 1) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1rrPKp9Uk9dS5lsoPq9ZjU";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 500
+        const totalPrice = 3.00
+        const units = 250
         this.units = units
         /*   this.cart[0].quantity = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -386,12 +400,12 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Likes" && this.slider === 2) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1rsNKp9Uk9dS5lHqf8NRSO";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 1000
+        const totalPrice = 5.50
+        const units = 500
         this.units = units
         /*   this.cart[0].quantity = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -400,12 +414,12 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Likes" && this.slider === 3) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1rt2Kp9Uk9dS5lDQziaNcG";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 2500
+        const totalPrice = 10.00
+        const units = 1000
         this.units = units
         /*   this.cart[0].quantity = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -414,12 +428,12 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Likes" && this.slider === 4) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1rulKp9Uk9dS5lqzDys6rN";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 5000
+        const totalPrice = 22.00
+        const units = 2500
         this.units = units
         /*   this.cart[0].quantity = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -428,12 +442,12 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Likes" && this.slider === 5) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1rw3Kp9Uk9dS5leM5Z3kUt";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 10000
+        const totalPrice = 43.00
+        const units = 5000
         this.units = units
         /*   this.cart[0].quantity = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -447,8 +461,8 @@ export default {
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 25000
+        const totalPrice = 85.00
+        const units = 10000
         this.units = units
         /*   this.cart[0].units = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -457,11 +471,25 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Likes" && this.slider === 7) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1ryRKp9Uk9dS5l0MoT0O8M";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
+        const totalPrice = 206.00
+        const units = 25000
+        this.units = units
+        /*   this.cart[0].units = slider; */
+        this.cart[0].totalPrice = totalPrice.toFixed(2);
+        this.cart[0].price = this.priceID;
+        this.cart[0].name = name;
+
+      }
+      if (this.selectedService === "Tiktok Likes" && this.slider === 8) {
+        this.priceID = "price_1M1rzjKp9Uk9dS5lhH5McLsu";
+        const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+        /*    const totalPrice = this.slider * 0.01; */
+        const totalPrice = 405.00
         const units = 50000
         this.units = units
         /*   this.cart[0].units = slider; */
@@ -471,13 +499,14 @@ export default {
 
       }
 
+
       if (this.selectedService === "Tiktok Followers" && this.slider === 0) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1sJ3Kp9Uk9dS5lwU9RmkKE";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 10.00
-        const units = 250
+        const totalPrice = 2.00
+        const units = 100
         this.units = units
         /*   this.cart[0].units = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -487,12 +516,12 @@ export default {
       }
 
       if (this.selectedService === "Tiktok Followers" && this.slider === 1) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1sK8Kp9Uk9dS5ltvfhLROF";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 10.00
-        const units = 500
+        const totalPrice = 4.50
+        const units = 250
         this.units = units
         /*   this.cart[0].quantity = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -501,12 +530,12 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Followers" && this.slider === 2) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1sKkKp9Uk9dS5lcEhq4Yr7";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 10.00
-        const units = 1000
+        const totalPrice = 8.50
+        const units = 500
         this.units = units
         /*   this.cart[0].units = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -515,12 +544,12 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Followers" && this.slider === 3) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1sLbKp9Uk9dS5l05nnUkZd";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 10.00
-        const units = 2500
+        const totalPrice = 16.00
+        const units = 1000
         this.units = units
         /*   this.cart[0].units = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -529,12 +558,12 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Followers" && this.slider === 4) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1sM9Kp9Uk9dS5l77zUpgGU";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 10.00
-        const units = 5000
+        const totalPrice = 39.00
+        const units = 2500
         this.units = units
         /*   this.cart[0].units = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -543,12 +572,12 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Followers" && this.slider === 5) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1sNrKp9Uk9dS5lSFFFI93p";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 10.00
-        const units = 10000
+        const totalPrice = 76.00
+        const units = 5000
         this.units = units
         /*   this.cart[0].units = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -557,12 +586,12 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Followers" && this.slider === 6) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1sOTKp9Uk9dS5lppn8Y6F7";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 10.00
-        const units = 25000
+        const totalPrice = 140.00
+        const units = 10000
         this.units = units
         /*   this.cart[0].units = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -571,11 +600,25 @@ export default {
 
       }
       if (this.selectedService === "Tiktok Followers" && this.slider === 7) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1sPsKp9Uk9dS5l5KfvcsYb";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 10.00
+        const totalPrice = 350.00
+        const units = 25000
+        this.units = units
+        /*   this.cart[0].units = slider; */
+        this.cart[0].totalPrice = totalPrice.toFixed(2);
+        this.cart[0].price = this.priceID;
+        this.cart[0].name = name;
+
+      }
+      if (this.selectedService === "Tiktok Followers" && this.slider === 8) {
+        this.priceID = "price_1M1sQTKp9Uk9dS5ljXpGId8R";
+        const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+        /*    const totalPrice = this.slider * 0.01; */
+        const totalPrice = 700.00
         const units = 50000
         this.units = units
         /*   this.cart[0].units = slider; */
@@ -584,7 +627,6 @@ export default {
         this.cart[0].name = name;
 
       }
-
     },
 
 
