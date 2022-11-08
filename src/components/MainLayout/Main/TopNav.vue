@@ -11,10 +11,10 @@
         <v-btn variant="text"  disabled class="hideMobile" ><v-icon size="x-large" icon="mdi-incognito"></v-icon> Social Stalk </v-btn>
         <v-btn variant="text"  disabled class="hideMobile"><v-icon size="x-large" icon="mdi-store"></v-icon> Social Store </v-btn>
 
-
         <v-btn variant="text"  class="hideDesk" to="/services"><v-icon size="x-large" icon="mdi-rocket-launch"></v-icon>  </v-btn>
         <v-btn variant="text"  class="hideDesk" disabled ><v-icon size="x-large" icon="mdi-incognito"></v-icon> </v-btn>
         <v-btn variant="text"  class="hideDesk" disabled ><v-icon size="x-large" icon="mdi-store"></v-icon> </v-btn>
+      
 
     </v-app-bar-title>
     <v-btn @click="GoToProfil" class="hideMobile"> <v-icon icon="mdi-account-details
@@ -43,7 +43,7 @@
 
     },
     GoToProfil(){
-      location.replace('https://billing.stripe.com/p/login/test_5kA3fh8kb4hk9VK3cc')
+      location.replace('https://billing.stripe.com/p/login/00g8zd0iB7KC2U8eUU')
     }
   },
     watch: {
@@ -55,6 +55,18 @@
   }
 </script>
 
-<style lang="css">
+<style lang="scss" scoped>
+@media screen and (max-width: 996px) {
+.hideMobile{
+display: none;
+;
+}
 
+}
+@media screen and (min-width : 996px) {
+  .hideDesk{
+display: none;
+
+}
+}
 </style>

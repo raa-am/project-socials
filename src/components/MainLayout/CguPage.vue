@@ -1,7 +1,7 @@
 <template >
 
     <v-row justify="center">
-      <v-col cols="10">
+      <v-col cols="12" lg="10" xl="10">
         <v-card id="borderDemo" rounded >
           <v-sheet class="d-flex flex-wrap justify-center " ><h1>General conditions</h1> </v-sheet>
 
@@ -10,9 +10,7 @@
 
                 <h3>Introduction:</h3>
 
-                Thank you for choosing SocialHub we appreciate your preference. The Services are provided by Ahtri
-                tn
-                Harju maakond, Tallinn, ESTONIA, +1 607 225 0799. SocialHub has the authority to make changes or
+                Thank you for choosing SocialHub we appreciate your preference. SocialHub has the authority to make changes or
                 modifications to this agreement at any time. The user can find the latest revision date to the user
                 terms
                 and conditions agreement at the bottom of this page. It is the user’s responsibility to keep current on

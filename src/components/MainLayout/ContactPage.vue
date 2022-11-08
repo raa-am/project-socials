@@ -3,7 +3,7 @@
 
   <v-row justify="center">
 
-    <v-col cols="8">
+    <v-col xs="12" sm="12" md="10" lg="10" xl="10">
 
       <v-card rounded id="borderDemo">
 
@@ -12,14 +12,12 @@
         </v-sheet>
 
         <v-card class="d-flex flex-wrap justify-center ">
-          <v-col cols="3">
+          <v-col cols="12" sm="6" md="6" lg="6" xl="6">
             <v-avatar size="80px" color="#FFA500">
               <v-icon  size="80px" icon="mdi-shield-lock-outline"></v-icon>
             </v-avatar>
             <v-card-text> We always take our customers' safety into consideration. Therefore, we secured our website with an SSL certificate so that you can safely make transactions. We never ask for your password or any vital and personal information to use our services. </v-card-text>
-          </v-col>
-
-          <v-col cols="3">
+ 
 
             <v-avatar size="80px" color="#FFA500">
               <v-icon size="80px" icon="mdi-face-agent"></v-icon>
@@ -28,7 +26,7 @@
           </v-col>
 
           <v-divider vertical></v-divider>
-          <v-col cols="6">
+          <v-col cols="12" sm="6" md="6" lg="6" xl="6">
             <v-text-field v-model="first" color="primary" label="Title" variant="outlined"></v-text-field>
 
             <v-text-field v-model="last" color="primary" label="Object" variant="outlined"></v-text-field>

@@ -119,8 +119,8 @@ export default {
         "pk_live_51LjZHQKp9Uk9dS5lvLmw54m2fvZDeQEXHEtbd8Yg80YfCOe4UKrOt4uPvknTBpQD18hniYKd5Afdgk1pgQMYqP5w00qSXSZ8GY",
       lineItems: [{ quantity:1, price: "" }],
       client: { email: store.getters.User.email, url: store.getters.User.url , units: store.getters.Cart.units},
-      successURL: "http://localhost:5173/success/" + GenUid,
-      cancelURL: "http://localhost:5173/error",
+      successURL: "https://socialhub.fun/success/" + GenUid,
+      cancelURL: "https://socialhub.fun/error",
       uid : ""
     };
   },
@@ -177,7 +177,7 @@ export default {
       location.replace("services");
     }
     window.onpopstate = function() {
-      location.replace("");
+      location.replace("services");
 
    };
   },

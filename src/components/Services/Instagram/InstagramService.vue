@@ -37,12 +37,19 @@
         <v-card-text class="d-flex align-center ">
           <v-window class="d-flex justify-center align-center " v-model="tab">
             <v-window-item value="one">
-              <p class="text--primary">
-                Social media is giving more exposure to individuals. It has become a very popular platform to get success in your desired field. But due to competition, it had become harder to get anywhere without using external support. Instagram viewsYes if you have talent you will eventually get success. But do you have one or two years before you start making something out of it? How will you reach your targeted audience if they do not even know you exist? Individuals who already have settled on this platform and have a good audience do not let newbies get through them in their category. It becomes risky for them. The best way to get ahead in the competition is to be one step ahead of everyone. Use our real Instagram views packages to get a better Instagram rank. These packages will give you nice views that will definitely help you to get settled in the field. Along with this, it will be helpful to attract a new audience to your channel. If there are already so many views then people will put faith in you to watch your video which will lead them to follow your channel. Give your 100% to your work and we will help you get viral!
-              </p>
-              <p>
-                You can choose the category of subscribers that suits your
-                needs.
+              <br>
+              <p class="text-subtitle-1">
+                Social media is giving more exposure to individuals. It has become a very popular platform to get
+                success in your desired field. But due to competition, it had become harder to get anywhere without
+                using external support. Yes if you have talent you will eventually get success. But do you have one or
+                two years before you start making something out of it? How will you reach your targeted audience if they
+                do not even know you exist? Individuals who already have settled on this platform and have a good
+                audience do not let newbies get through them in their category. It becomes risky for them. The best way
+                to get ahead in the competition is to be one step ahead of everyone. Use our real packages
+                to get a better rank. These packages will give you nice views that will definitely help you to
+                get settled in the field. Along with this, it will be helpful to attract a new audience to your channel.
+                If there are already so many views then people will put faith in you to watch your video which will lead
+                them to follow your channel. Give your 100% to your work and we will help you get viral!
               </p>
               <p>
                 For a detailed description of the subscriber categories, see
@@ -50,45 +57,55 @@
               </p>
             </v-window-item>
 
-            <v-window-item value="two">
-              <p class="text-left">
+            <v-window-item value="two" >
+              <br>
+              <h3 class="text-h6" >
+
+                We do not work with any bots or dead accounts!! ALL our packages are composed with 100% real high quality profile maintained by real people around the world. 
+                What we do is only promoting your profiles/posts/videos with the large social media community until you reach your goal. 
+                We guarantee to deliver you 1-25% more than your order.
+              </h3>
+ <br>
+              <p class="text-left text-subtitle-1">
 
                 The processing of your order will start within 1 minute to 12
                 hours. You will receive a notification about this. Working of
                 an order can take from 1 minute to 14 days, sometimes more,
-                depending on the amount of the order and workload. 
+                depending on the amount of the order and workload.
               </p>
-              <p class="text-left">
+              <p class="text-left text-subtitle-1">
                 Likes \
-                Subscriptions \ Views, etc. will go at different speeds, you
-                can see the exact speed in the "Additional Information"
-                section The amount of services you have paid will be provided
+                Subscriptions \ Views, etc. will go at different speeds. 
+                The amount of services you have paid will be provided
                 to you in any case, in full and with an additional bonus of
-                1-25%. At the end of the subscription, you can ask for a
-                screenshot of the work done.
+                1-25%. 
               </p>
+          
             </v-window-item>
 
             <v-window-item value="three">
-              <p class="text-left">
-                    1) You must have a live account with a profile photo and at
-                    least 1 post on the wall.
-                  </p>
-                  <p class="text-left">
-                    2) The profile must be open (Not Private).
-                  </p>
-                  <p class="text-left">
-                    3) Before receiving a message about the complete fulfillment
-                    of your order and during the entire warranty period:
-                  </p>
-                  <p>a. DO NOT CLOSE THE PROFILE (DO NOT INCLUDE "PRIVACY");</p>
-                  <p>b. DO NOT CHANGE LOGIN (NICK = URL);</p>
-                  <p>
-                    c. DO NOT CHANGE THE INFORMATION IN THE PROFILE
-                    (description, contacts, links);
-                  </p>
-                  <p>d. DO NOT CHANGE THE THEME OF YOUR PUBLICATIONS;</p>
-                  <p>e. DO NOT ORDER SUBSCRIBERS IN OTHER SERVICES.</p>
+              <br>
+              <h2 class="text-h6">IMPORTANT NOTE:</h2>
+              <br>
+              <p class="text-left text-subtitle-1" >
+                1) You must have a live account with a profile photo and at
+                least 1 post on the wall.
+              </p>
+              <p class="text-left text-subtitle-1">
+                2) The profile must be open (Not Private).
+              </p>
+              <p class="text-left text-subtitle-1">
+                3) Before receiving a message about the complete fulfillment
+                of your order and during the entire warranty period:
+              </p>
+              <p>a. DO NOT CLOSE THE PROFILE (DO NOT INCLUDE "PRIVACY");</p>
+              <p>b. DO NOT CHANGE LOGIN (NICK = URL);</p>
+              <p>
+                c. DO NOT CHANGE THE INFORMATION IN THE PROFILE
+                (description, contacts, links);
+              </p>
+              <p>d. DO NOT CHANGE THE THEME OF YOUR PUBLICATIONS;</p>
+              <p>e. DO NOT ORDER SUBSCRIBERS IN OTHER SERVICES.</p>
             </v-window-item>
           </v-window>
         </v-card-text>

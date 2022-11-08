@@ -90,19 +90,7 @@ export default {
 </script>
 
 <style lang="css">
-@media screen and (width < 996px) {
-.hideMobile{
-display: none;
-;
-}
 
-}
-@media screen and (width > 996px) {
-  .hideDesk{
-display: none;
-
-}
-}
 .fade-enter-active, .fade-leave-active {
   transition: opacity .1s;
 
