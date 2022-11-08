@@ -31,7 +31,7 @@ export default {
     show: false,
     dialog: false,
     items: [
-      { title: 'Tiktok', link:'/services/tiktok'  , image: 'https://icones.pro/wp-content/uploads/2021/03/logo-icone-tiktok-simbolo.png' },
+      { title: 'Tiktok', link:'/services/tiktok'  , image: 'https://i.postimg.cc/wMCNkcmF/logo-icone-tiktok-simbolo.png' },
       { title: 'Instagram',link:'/services/instagram'  , image: 'https://i.postimg.cc/SsksG1Rg/kisspng-computer-icons-logo-instagram-5abe0fd9d350d3-5015052415224053378656.webp'},
       { title: 'Twitter', link:'/services/youtube', image: 'https://i.postimg.cc/j5V2fYKb/kisspng-united-states-youtube-logo-youtube-play-button-transparent-png-5ab1be08946c16-88898959152159.png' },
     ],

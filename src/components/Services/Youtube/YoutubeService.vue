@@ -192,7 +192,7 @@ export default {
       client: { email: "", url: "" },
       images: [
         {
-          src: "https://firebasestorage.googleapis.com/v0/b/socialmanager-7c8fd.appspot.com/o/youtube-subscribe-interface-button-with-white-background_327390-211.webp?alt=media&token=132e627b-a389-4129-87dc-db244174fda8",
+          src: "https://firebasestorage.googleapis.com/v0/b/socialmanager-7c8fd.appspot.com/o/Youtube%2Fyoutube-subscribe-interface-button-with-white-background_327390-211.webp?alt=media&token=a7bd6310-8fa2-4bf1-aaf8-7de819eebea7",
         },
         {
           src: "https://firebasestorage.googleapis.com/v0/b/socialmanager-7c8fd.appspot.com/o/Youtube%2FYoutube-views.jpg?alt=media&token=e10ce5c8-fc94-485d-8782-b8df86aad959",
