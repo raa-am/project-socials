@@ -1,14 +1,7 @@
 import { createStore } from "vuex";
 import createPersistedState from "vuex-persistedstate";
-import {db} from './../firebase/firebaseinit'
-import { getFirestore, collection, query, where, getDocs, orderBy, doc, setDoc, getDoc, onSnapshot, deleteDoc } from "firebase/firestore";
 import orders from './orders'
-import router from './../router'
-import { useRoute } from 'vue-router'
 
-const currentRoute = useRoute()
-
-console.log(currentRoute)
 
 
 // Create a new store instance.

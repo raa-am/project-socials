@@ -40,12 +40,7 @@ if(email){
 
 }
 
-
-
-         const data = store.getters.Order
-
-         console.log(data)
-
+   const data = store.getters.Order
    
     window.localStorage.removeItem('vuex')
 

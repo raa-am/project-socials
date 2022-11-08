@@ -1,99 +1,95 @@
 <template >
 
 
-<v-row justify="center">
+  <v-row justify="center">
 
-      <v-col cols="8">
-   
-       <v-card rounded  id="borderDemo" >
+    <v-col cols="8">
 
-        <v-sheet class="d-flex flex-wrap justify-center " ><h1>Contact Us</h1> </v-sheet>
+      <v-card rounded id="borderDemo">
 
-        <v-card class="d-flex flex-wrap justify-end "  >
+        <v-sheet class="d-flex flex-wrap justify-center ">
+          <h1>Contact Us</h1>
+        </v-sheet>
+
+        <v-card class="d-flex flex-wrap justify-center ">
+          <v-col cols="3">
+            <v-avatar size="80px" color="#FFA500">
+              <v-icon  size="80px" icon="mdi-shield-lock-outline"></v-icon>
+            </v-avatar>
+            <v-card-text> We always take our customers' safety into consideration. Therefore, we secured our website with an SSL certificate so that you can safely make transactions. We never ask for your password or any vital and personal information to use our services. </v-card-text>
+          </v-col>
+
+          <v-col cols="3">
+
+            <v-avatar size="80px" color="#FFA500">
+              <v-icon size="80px" icon="mdi-face-agent"></v-icon>
+            </v-avatar>
+            <v-card-text> We are always ready to help you with our live support. You can reach our support 24/7. We are ready to answer all of your questions. Answers times can go up to 3 working days. </v-card-text>
+          </v-col>
+
+          <v-divider vertical></v-divider>
           <v-col cols="6">
-       
-   
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque debitis, veritatis doloremque explicabo assumenda inventore aliquid neque autem. Adipisci fugit magnam nihil neque dolorum natus vel dolor perspiciatis voluptatibus maxime!</p>
- 
-        </v-col>
-        <v-divider vertical></v-divider>
-        <v-col cols="6">
-          <v-text-field
-           
-           v-model="first"
-           color="primary"
-           label="Title"
-          variant="outlined"
-         ></v-text-field>
-   
-         <v-text-field
-           v-model="last"
-           color="primary"
-           label="Object"
-          variant="outlined"
-         ></v-text-field>
-   
-         <v-text-field
-           v-model="email"
-           color="primary"
-           label="Email"
-          variant="outlined"
-         ></v-text-field>
-   
-         <v-textarea  label="Message" variant="outlined"></v-textarea>
- 
-        </v-col>
+            <v-text-field v-model="first" color="primary" label="Title" variant="outlined"></v-text-field>
+
+            <v-text-field v-model="last" color="primary" label="Object" variant="outlined"></v-text-field>
+
+            <v-text-field v-model="email" color="primary" label="Email" variant="outlined"></v-text-field>
+
+            <v-textarea label="Message" variant="outlined"></v-textarea>
+
+          </v-col>
         </v-card>
 
 
-  
-  
-        <v-checkbox class="d-flex flex-wrap justify-center "  
-          v-model="terms"
-          color="secondary"
-          label="I agree to site terms and conditions"
-        ></v-checkbox>
-  
-  
-      <v-card-actions class="d-flex flex-wrap justify-center "  >
-  
-        <v-btn variant="outlined">
-          Send ticket 
-          <v-icon icon="mdi-email-send"></v-icon>
-        </v-btn>
-      </v-card-actions>
 
 
-  </v-card>
-    
+        <v-checkbox class="d-flex flex-wrap justify-center " v-model="terms" color="secondary"
+          label="I agree to site terms and conditions"></v-checkbox>
+
+
+        <v-card-actions class="d-flex flex-wrap justify-center ">
+
+          <v-btn variant="outlined">
+            Send ticket
+            <v-icon icon="mdi-email-send"></v-icon>
+          </v-btn>
+        </v-card-actions>
+
+
+      </v-card>
+
 
     </v-col>
-    
-  </v-row>
-  </template>
-  <script>
-    export default {
 
-      data: () => ({
-        first: null,
-        last: null,
-        email: null,
-        password: null,
-        terms: false,
-      }),
-    }
-  </script>
+  </v-row>
+</template>
+<script>
+export default {
+
+  data: () => ({
+    first: null,
+    last: null,
+    email: null,
+    password: null,
+    terms: false,
+  }),
+}
+</script>
 
 <style lang="css">
-
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   display: none;
   transition: opacity .5s;
 
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active below version 2.1.8 */
+  {
   opacity: 0;
 
 }
-
 </style>

@@ -83,7 +83,6 @@ export default {
 setTimeout(() => {
    
    if(!store.getters.switchCgu == false){
-   console.log('ok')
    this.$router.push({path: "/services"})
 }
 

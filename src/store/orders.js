@@ -1,12 +1,8 @@
 import {db} from '../firebase/firebaseinit'
 import { getFirestore, collection, query, where, getDocs, orderBy, doc, setDoc, getDoc, onSnapshot, deleteDoc } from "firebase/firestore";
 import { v4 as uuidv4 } from 'uuid';
-import {useRoute} from 'vue-router'
-import router from '../router'
 
-const route = useRoute()
 
-console.log( router.currentRoute.value.params.id)
 
 const state = {
     cart : {price:'', quantity:'', totalPrice: '', name:'' , units:''},
@@ -79,10 +75,7 @@ const actions = {
         totalPrice: getters.Cart.totalPrice
       }
 
-    
-      
-      console.log(state.orderId )
-      
+          
        setDoc(doc(db, "Orders" , state.orderId), order)
        commit( 'ADD_ORDER',  state.orderId);
 
@@ -94,24 +87,14 @@ const actions = {
 
      
       const docRef = doc(db, "Orders",state.orderId);
-      console.log(state.orderId)
       const docSnap = await getDoc(docRef);
       const order = docSnap.data()
 
       orderData = {email: order.email, url: order.url} 
 
-      console.log(orderData)
     
 
       commit( 'ADD_ORDERS',  orderData);
-
-
-      if (docSnap.exists()) {
-        console.log("Document data:", order);
-      } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-      }
       
 }
 }

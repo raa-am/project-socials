@@ -149,10 +149,8 @@ export default {
     Switch(){
       if(this.Access == true){
       this.isDisabled = true 
-      console.log(this.isDisabled)
     }else {
       this.isDisabled = false 
-      console.log(this.isDisabled)
     }
     }
   },
@@ -174,7 +172,6 @@ export default {
 
 
     if (this.lineItems[0].price) {
-      console.log(this.lineItems[0].price);
     } else {
     window.localStorage.removeItem('vuex')
       location.replace("services");

@@ -1,7 +1,9 @@
 <template>
   
+  <v-btn  variant="plain" size="s-large" class="hideDesk" ><v-icon size="x-large" icon="mdi-shark-fin-outline"> </v-icon> </v-btn>
+  <v-btn  variant="plain" class="hideMobile" > <h2> SOCIAL<v-icon icon="mdi-shark-fin-outline"> </v-icon>HUB</h2></v-btn>
 
-    <v-app-bar-nav   icon="mdi-shark-fin-outline" ><v-btn variant="text" > <v-icon size="x-large" icon="mdi-shark-fin-outline"></v-icon> <h2> SH </h2> </v-btn></v-app-bar-nav>
+
 
     <v-app-bar-title class="d-flex justify-center">
 

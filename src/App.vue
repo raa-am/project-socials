@@ -64,11 +64,9 @@ export default {
       console.debug(`MyCoolComponent - watch route.name changed to ${route.name}`);
     if(route.name == "checkout" ){
         this.hide = true
-        console.log(this.hide)
      
     } else{
           this.hide = false
-          console.log(this.hide)
         }
 
       // Do something here...
