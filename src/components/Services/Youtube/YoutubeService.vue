@@ -236,7 +236,7 @@ export default {
 
     Selected() {
       if (this.selectedService === "Youtube Viewers" && this.slider === 0) {
-        this.priceID = "price_1LynSZKp9Uk9dS5lO2j8LScl";
+        this.priceID = "price_1M1hwXKp9Uk9dS5lwxlUbxR4";
         const name = this.itemsService[0].title
         /*      const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
