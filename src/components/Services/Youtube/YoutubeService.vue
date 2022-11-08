@@ -98,6 +98,7 @@
 
       <v-card rounded id="borderDemo" class="sticky" outlined>
         <v-form ref="form" v-model="valid" lazy-validation>
+          <v-card-title class="d-flex justify-center align-center">Choose your package:</v-card-title>
 
           <v-card-text>
             <br>
@@ -160,8 +161,8 @@ export default {
   data() {
     return {
       isSticky: false,
-            stickyClass: 'is_sticky',
-           scrollPosition:0,
+       stickyClass: 'is_sticky',
+        scrollPosition:0,
       valid: true,
       selectedService: 'Youtube Viewers',
       selectedPackage: '250',
@@ -593,7 +594,7 @@ export default {
 @media screen and (width > 960px) {
   .sticky {
   position: fixed;
-  width: 30vh;
+  width: 35vh;
   }
 }
 

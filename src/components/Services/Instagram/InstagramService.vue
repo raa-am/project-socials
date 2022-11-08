@@ -9,7 +9,7 @@
 
 
 
-    <v-col sm="12" md="8" lg="9" xl="8" justify="start">
+    <v-col sm="12" md="8" lg="9" xl="8" >
 
       <v-card id="borderDemo" min-height="100vh">
         <v-card-title class="d-flex justify-center align-center mb-2"><h2>Instagram Service</h2></v-card-title>
@@ -102,8 +102,10 @@
 
       <v-card rounded id="borderDemo" class="sticky" outlined>
         <v-form ref="form" v-model="valid" lazy-validation>
+          <v-card-title class="d-flex justify-center align-center">Choose your package:</v-card-title>
 
           <v-card-text>
+            
             <br>
 
             <v-select variant="outlined" :on-change="Selected()" :items="itemsService" v-model="selectedService"
@@ -596,7 +598,7 @@ export default {
 @media screen and (width > 960px) {
   .sticky {
   position: fixed;
-  width: 30vh;
+  width: 35vh;
   }
 }
 

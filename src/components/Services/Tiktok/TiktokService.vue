@@ -28,13 +28,13 @@
           <v-divider></v-divider>
 
 
-        <v-tabs class="d-flex justify-center" v-model="tab">
+        <v-tabs color="#FFA500" class="d-flex justify-center" v-model="tab">
           <v-tab value="one"> Description </v-tab>
           <v-tab value="two">Additional Information</v-tab>
           <v-tab value="three">Account requirements</v-tab>
         </v-tabs>
 
-        <v-card-text class="d-flex align-center ">
+        <v-card-text class="d-flex align-center " >
           <v-window class="d-flex justify-center align-center " v-model="tab">
             <v-window-item value="one">
               <p class="text--primary">
@@ -102,6 +102,7 @@
 
       <v-card rounded id="borderDemo" class="sticky" outlined>
         <v-form ref="form" v-model="valid" lazy-validation>
+          <v-card-title class="d-flex justify-center align-center">Choose your package:</v-card-title>
 
           <v-card-text>
             <br>
@@ -596,7 +597,7 @@ export default {
 @media screen and (width > 960px) {
   .sticky {
   position: fixed;
-  width: 30vh;
+  width: 35vh;
   }
 }
 

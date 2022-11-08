@@ -1,9 +1,8 @@
-<template v-slot="{ Component }">
-<transition name="fade">
+<template >
 
-    <v-row  :is="Component" class="d-flex flex-wrap justify-center " >
-
-        <v-card id="borderDemo" rounded   max-width="100vh" >
+    <v-row justify="center">
+      <v-col cols="10">
+        <v-card id="borderDemo" rounded >
           <v-sheet class="d-flex flex-wrap justify-center " ><h1>General conditions</h1> </v-sheet>
 
             <v-card-text  >
@@ -108,9 +107,13 @@ SocialHub is not liable for any damage/loss of videos, social media accounts, an
     </v-card-actions>
         </v-card>
 
+
+
+      </v-col>
+     
+
     </v-row>
 
-</transition>
 </template>
 
 <script>

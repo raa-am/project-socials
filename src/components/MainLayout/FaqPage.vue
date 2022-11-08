@@ -1,7 +1,7 @@
 <template>
-
-    <v-row class="d-flex justify-center" >
-    <v-card max-width="100vh" id="borderDemo" rounded >
+  <v-row justify="center">
+      <v-col cols="10">
+    <v-card id="borderDemo" rounded >
       <v-sheet class="d-flex flex-wrap justify-center " ><h1>FAQ:</h1> </v-sheet>
       <v-expansion-panels variant="popout" class="my-4" >
 
@@ -12,7 +12,7 @@
         ></v-expansion-panel>
       </v-expansion-panels>
     </v-card>
-
+</v-col>
 </v-row>
   </template>
 
