@@ -20,11 +20,11 @@ export default {
   mounted(){
     setTimeout(() => {
 
-if (!store.getters.switchCgu == false) {
-   this.$router.push({ path: "/services" })
-}
 
-}, 2000);
+   this.$router.push({ path: "/services" })
+
+
+}, 3000);
   }
 }
 </script>

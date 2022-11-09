@@ -139,7 +139,7 @@
               <v-icon start icon="mdi-account-group"></v-icon>
               <h2 class="d-flex justify-center"> {{ units }} units</h2>
             </v-chip>
-            <v-slider color="#FFA500" label="Service:" :max="7" step="1" show-ticks="always" tick-size="4"
+            <v-slider color="#FFA500" label="Service:" :max="8" step="1" show-ticks="always" tick-size="4"
               v-model="slider"></v-slider>
 
             <v-divider></v-divider>
@@ -186,14 +186,14 @@ export default {
             stickyClass: 'is_sticky',
            scrollPosition:0,
       valid: true,
-      selectedService: 'Instagram Viewers',
+      selectedService: 'Instagram Reel Views',
       selectedPackage: '250',
       slider: 0,
       units: 0,
       loading: false,
       tab: null,
       itemsService: [
-        { title: "Instagram Viewers" },
+        { title: "Instagram Reel Views" },
         { title: "Instagram Likes" },
         { title: "Instagram Followers" },
       ],
@@ -257,13 +257,13 @@ export default {
     },
 
     Selected() {
-      if (this.selectedService === "Instagram Viewers" && this.slider === 0) {
-        this.priceID = "price_1LynSZKp9Uk9dS5lO2j8LScl";
+      if (this.selectedService === "Instagram Reel Views" && this.slider === 0) {
+        this.priceID = "price_1M1vJsKp9Uk9dS5laaLSuB7y";
         const name = this.itemsService[0].title
         /*      const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
 
-        const totalPrice = 2
+        const totalPrice = 0.80
         const units = 250
 
         this.units = units
@@ -274,12 +274,12 @@ export default {
         this.cart[0].price = this.priceID;
       }
 
-      if (this.selectedService === "Instagram Viewers" && this.slider === 1) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+      if (this.selectedService === "Instagram Reel Views" && this.slider === 1) {
+        this.priceID = "price_1M1vKsKp9Uk9dS5l2qXndlQO";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 3.50
+        const totalPrice = 1.50
         const units = 500
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -289,12 +289,12 @@ export default {
         this.cart[0].name = name;
 
       }
-      if (this.selectedService === "Instagram Viewers" && this.slider === 2) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+      if (this.selectedService === "Instagram Reel Views" && this.slider === 2) {
+        this.priceID = "price_1M1vMEKp9Uk9dS5lKjS1n6pY";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 5.50
+        const totalPrice = 2.00
         const units = 1000
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -303,12 +303,12 @@ export default {
         this.cart[0].name = name;
 
       }
-      if (this.selectedService === "Instagram Viewers" && this.slider === 3) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+      if (this.selectedService === "Instagram Reel Views" && this.slider === 3) {
+        this.priceID = "price_1M1vNAKp9Uk9dS5liUSMPyMO";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 7.50
+        const totalPrice = 3.50
         const units = 2500
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -317,12 +317,12 @@ export default {
         this.cart[0].name = name;
 
       }
-      if (this.selectedService === "Instagram Viewers" && this.slider === 4) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+      if (this.selectedService === "Instagram Reel Views" && this.slider === 4) {
+        this.priceID = "price_1M1vNtKp9Uk9dS5le8DYcBRx";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 10.00
+        const totalPrice = 6.50
         const units = 5000
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -331,12 +331,12 @@ export default {
         this.cart[0].name = name;
 
       }
-      if (this.selectedService === "Instagram Viewers" && this.slider === 5) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+      if (this.selectedService === "Instagram Reel Views" && this.slider === 5) {
+        this.priceID = "price_1M1vPWKp9Uk9dS5ltRFWXAWz";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 20.00
+        const totalPrice = 12.00
         const units = 10000
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -345,12 +345,12 @@ export default {
         this.cart[0].name = name;
 
       }
-      if (this.selectedService === "Instagram Viewers" && this.slider === 6) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+      if (this.selectedService === "Instagram Reel Views" && this.slider === 6) {
+        this.priceID = "price_1M1vQ6Kp9Uk9dS5lBnHzxapz";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
+        const totalPrice = 28.00
         const units = 25000
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -359,12 +359,12 @@ export default {
         this.cart[0].name = name;
 
       }
-      if (this.selectedService === "Instagram Viewers" && this.slider === 7) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+      if (this.selectedService === "Instagram Reel Views" && this.slider === 7) {
+        this.priceID = "price_1M1vQvKp9Uk9dS5lkqSrB9D3";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
+        const totalPrice = 52.00
         const units = 50000
         this.units = units
         /*   this.cart[0].quantity = slider; */
@@ -373,14 +373,30 @@ export default {
         this.cart[0].name = name;
 
       }
-
-      if (this.selectedService === "Instagram Likes" && this.slider === 0) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+      if (this.selectedService === "Instagram Reel Views" && this.slider === 8) {
+        this.priceID = "price_1M1vRnKp9Uk9dS5lDaCD8TdR";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 250
+        const totalPrice = 100.00
+        const units = 100000
+        this.units = units
+        /*   this.cart[0].quantity = slider; */
+        this.cart[0].totalPrice = totalPrice.toFixed(2);
+        this.cart[0].price = this.priceID;
+        this.cart[0].name = name;
+
+      }
+
+
+
+      if (this.selectedService === "Instagram Likes" && this.slider === 0) {
+        this.priceID = "price_1M1w0UKp9Uk9dS5lNXBeaDl5";
+        const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+        /*    const totalPrice = this.slider * 0.01; */
+        const totalPrice = 1.50
+        const units = 100
         this.units = units
 
         /*   this.cart[0].quantity = slider; */
@@ -390,12 +406,12 @@ export default {
 
       }
       if (this.selectedService === "Instagram Likes" && this.slider === 1) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1w1IKp9Uk9dS5l3DvenFrW";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 500
+        const totalPrice = 2.50
+        const units = 250
         this.units = units
         /*   this.cart[0].quantity = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -404,12 +420,12 @@ export default {
 
       }
       if (this.selectedService === "Instagram Likes" && this.slider === 2) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1w2ZKp9Uk9dS5lfV5bjjp7";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 1000
+        const totalPrice = 4.70
+        const units = 500
         this.units = units
         /*   this.cart[0].quantity = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -418,12 +434,12 @@ export default {
 
       }
       if (this.selectedService === "Instagram Likes" && this.slider === 3) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1w2ZKp9Uk9dS5lfV5bjjp7";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 2500
+        const totalPrice = 7.00
+        const units = 1000
         this.units = units
         /*   this.cart[0].quantity = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -432,12 +448,12 @@ export default {
 
       }
       if (this.selectedService === "Instagram Likes" && this.slider === 4) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1w5rKp9Uk9dS5lILH7gxaD";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 5000
+        const totalPrice = 13.00
+        const units = 2500
         this.units = units
         /*   this.cart[0].quantity = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -446,12 +462,12 @@ export default {
 
       }
       if (this.selectedService === "Instagram Likes" && this.slider === 5) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1w6lKp9Uk9dS5lCCed5tR5";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 10000
+        const totalPrice = 22.00
+        const units = 5000
         this.units = units
         /*   this.cart[0].quantity = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -461,12 +477,12 @@ export default {
       }
 
       if (this.selectedService === "Instagram Likes" && this.slider === 6) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1w7UKp9Uk9dS5lXFQIwwQD";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
-        const units = 25000
+        const totalPrice = 33.00
+        const units = 10000
         this.units = units
         /*   this.cart[0].units = slider; */
         this.cart[0].totalPrice = totalPrice.toFixed(2);
@@ -475,11 +491,25 @@ export default {
 
       }
       if (this.selectedService === "Instagram Likes" && this.slider === 7) {
-        this.priceID = "price_1LynDQKp9Uk9dS5l7NKnc3cQ";
+        this.priceID = "price_1M1w89Kp9Uk9dS5lK0tF6gsV";
         const name = this.itemsService[1].title
         /*   const slider = this.slider; */
         /*    const totalPrice = this.slider * 0.01; */
-        const totalPrice = 30.00
+        const totalPrice = 75.00
+        const units = 25000
+        this.units = units
+        /*   this.cart[0].units = slider; */
+        this.cart[0].totalPrice = totalPrice.toFixed(2);
+        this.cart[0].price = this.priceID;
+        this.cart[0].name = name;
+
+      }
+      if (this.selectedService === "Instagram Likes" && this.slider === 8) {
+        this.priceID = "price_1M1wZOKp9Uk9dS5lJeHERyZG";
+        const name = this.itemsService[1].title
+        /*   const slider = this.slider; */
+        /*    const totalPrice = this.slider * 0.01; */
+        const totalPrice = 150.00
         const units = 50000
         this.units = units
         /*   this.cart[0].units = slider; */

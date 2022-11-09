@@ -31,6 +31,12 @@ const router = createRouter({
       component: PayoutPage,
 
     },
+    {
+      path: "/error:",
+      name: "Error",
+      component: ErrorPage,
+
+    },
     { path: '/:pathMatch(.*)*', name: 'NotFound', component: ErrorPage },
 
     {
